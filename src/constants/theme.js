@@ -12,11 +12,11 @@ export const COLORS = {
     white: "#ffffff",
     black: "#000000",
     red: "red",
-    green: "green",
+    green: '#60D669',
     primary: "#2F75FD",
     background: "#FFFFFF",
-
-    
+    linear: "#CDE1FF",
+    offwhite: "#FAF9F6"
 };
 
 export const SIZES = {

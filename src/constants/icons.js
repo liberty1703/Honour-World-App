@@ -9,7 +9,19 @@ const phone = require('../assets/icons/phone.png');
 const whatsapp = require('../assets/icons/whatsapp.png');
 const home = require('../assets/icons/home.png')
 const notification = require('../assets/icons/notification.png')
-
+const copy = require('../assets/icons/copy.png')
+const cash = require('../assets/icons/cash.png')
+const transfer = require ('../assets/icons/transfer.png')
+const more = require('../assets/icons/more.png')
+const phonecall = require('../assets/icons/phonecall.png')
+const data = require('../assets/icons/data.png')
+const cabletv = require('../assets/icons/cabletv.png')
+const mtn = require('../assets/icons/mtn.png')
+const ninemobile = require('../assets/icons/ninemobile.png')
+const airtel = require('../assets/icons/airtel.png')
+const glo = require('../assets/icons/glo.png')
+const contacts = require('../assets/icons/contacts.png')
+const caution = require('../assets/icons/caution.png')
 export default {
     arrow,
     box,
@@ -21,5 +33,18 @@ export default {
     phone,
     whatsapp,
     home,
-    notification
+    notification,
+    copy,
+    cash,
+    transfer,
+    data,
+    more,
+    cabletv,
+    phonecall,
+    mtn,
+    glo,
+    airtel,
+    ninemobile,
+     caution,
+     contacts
 }

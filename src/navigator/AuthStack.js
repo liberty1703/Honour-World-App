@@ -6,6 +6,7 @@ import SignUp from '../screens/Auth/SignUp';
 import Verify from '../screens/Auth/Verify';
 import AccountCreated from '../screens/Auth/AccountCreated';
 import FingerPrintAuth from '../screens/Auth/FingerPrintAuth';
+import Airtime from '../screens/Main/Airtime/Airtime';
 
 const  AuthStack = () => {
     const Stack = createNativeStackNavigator();
@@ -16,6 +17,7 @@ const  AuthStack = () => {
     <Stack.Screen name= 'Verify' component={Verify}/>
     <Stack.Screen name='AccountCreated' component={AccountCreated}/>
     <Stack.Screen name='FingerPrintAuth' component={FingerPrintAuth}/>
+    <Stack.Screen name='Airtime' component={Airtime}/>
   </Stack.Navigator>
   )
 }
