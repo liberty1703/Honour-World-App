@@ -22,6 +22,9 @@ const airtel = require('../assets/icons/airtel.png')
 const glo = require('../assets/icons/glo.png')
 const contacts = require('../assets/icons/contacts.png')
 const caution = require('../assets/icons/caution.png')
+const validation = require('../assets/icons/validation.png')
+const check = require('../assets/icons/check.png')
+const share = require('../assets/icons/share.png')
 export default {
     arrow,
     box,
@@ -46,5 +49,8 @@ export default {
     airtel,
     ninemobile,
      caution,
-     contacts
+     contacts,
+     validation,
+     check,
+     share
 }

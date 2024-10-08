@@ -16,7 +16,9 @@ export const COLORS = {
     primary: "#2F75FD",
     background: "#FFFFFF",
     linear: "#CDE1FF",
-    offwhite: "#FAF9F6"
+    offwhite: "#FAF9F6",
+    grey: "#F8FCFF",
+
 };
 
 export const SIZES = {
