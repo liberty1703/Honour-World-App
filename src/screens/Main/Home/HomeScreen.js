@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView }
 import React, { useState } from 'react'
 import { COLORS, FONTS, icons, images, SIZES } from '../../../constants'
 import { useNavigation } from '@react-navigation/native'
+import TransferBalance from '../Transfer/TransferBalance'
 
 const ActionsData = [
   { id: 1, subtitle: "Airtime", image: icons.phonecall },
@@ -110,7 +111,7 @@ const HomeScreen = () => {
             <Image source={icons.cash} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
             <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]}>
+          <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={()=> navigation.navigate(TransferBalance)}>
             <Image source={icons.transfer} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
             <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Transfer Balance</Text>
           </TouchableOpacity>

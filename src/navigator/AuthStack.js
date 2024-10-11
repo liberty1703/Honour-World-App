@@ -9,6 +9,11 @@ import FingerPrintAuth from '../screens/Auth/FingerPrintAuth';
 import Airtime from '../screens/Main/Airtime/Airtime';
 import Confirmation from '../screens/Main/Confirmation/Confirmation';
 import Successful from '../screens/Main/Succesful/Successful';
+import HonourScreen from '../screens/Main/Wallet/HonourScreen';
+import CreditScreen from '../screens/Main/Wallet/CreditScreen';
+import CardScreen from '../screens/Main/Wallet/CardScreen';
+import TransferBalance from '../screens/Main/Transfer/TransferBalance';
+
 
 const  AuthStack = () => {
     const Stack = createNativeStackNavigator();
@@ -22,6 +27,10 @@ const  AuthStack = () => {
     <Stack.Screen name='Airtime' component={Airtime}/>
     <Stack.Screen name='Confirmation' component={Confirmation}/>
     <Stack.Screen name='Successful' component={Successful}/>
+    <Stack.Screen name='HonourScreen' component={HonourScreen}/>
+    <Stack.Screen name='CreditScreen' component={CreditScreen}/>
+    <Stack.Screen name='CardScreen' component={CardScreen}/>
+    <Stack.Screen name='TransferBalance' component={TransferBalance}/>
   </Stack.Navigator>
   )
 }

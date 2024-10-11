@@ -25,6 +25,22 @@ const caution = require('../assets/icons/caution.png')
 const validation = require('../assets/icons/validation.png')
 const check = require('../assets/icons/check.png')
 const share = require('../assets/icons/share.png')
+const service = require('../assets/icons/service.png')
+const electricity = require('../assets/icons/electricity.png')
+const education = require('../assets/icons/education.png')
+const airtime = require('../assets/icons/airtime.png')
+const autobuy = require('../assets/icons/autobuy.png')
+const cgwallet = require('../assets/icons/cgwallet.png')
+const biz = require('../assets/icons/biz.png')
+const wallet = require('../assets/icons/wallet.png')
+const user = require('../assets/icons/user.png')
+const arrowright = require('../assets/icons/arrowright.png')
+const wema = require('../assets/icons/wema.png')
+const circlered = require('../assets/icons/circlered.png')
+const boxarrrow = require('../assets/icons/boxarrrow.png')
+const monniepoint = require('../assets/icons/monniepoint.png')
+const card = require('../assets/icons/card.png')
+const droparrow = require('../assets/icons/droparrow.png')
 export default {
     arrow,
     box,
@@ -52,5 +68,21 @@ export default {
      contacts,
      validation,
      check,
-     share
+     share,
+     service,
+     electricity,
+     education,
+     autobuy,
+     airtime,
+     cgwallet,
+     biz,
+     wallet,
+     user,
+     arrowright,
+     wema,
+     circlered,
+     boxarrrow,
+     monniepoint,
+     card,
+     droparrow,
 }
