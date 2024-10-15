@@ -13,12 +13,14 @@ import HonourScreen from '../screens/Main/Wallet/HonourScreen';
 import CreditScreen from '../screens/Main/Wallet/CreditScreen';
 import CardScreen from '../screens/Main/Wallet/CardScreen';
 import TransferBalance from '../screens/Main/Transfer/TransferBalance';
+import SplashScreen from '../screens/Main/SplashScreen';
 
 
 const  AuthStack = () => {
     const Stack = createNativeStackNavigator();
   return (
   <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Screen name='SplashScreen' component={SplashScreen}/>
     <Stack.Screen name='Login' component={Login}/>
     <Stack.Screen name='SignUp' component={SignUp}/>
     <Stack.Screen name= 'Verify' component={Verify}/>
