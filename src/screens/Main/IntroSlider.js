@@ -3,6 +3,7 @@ import React from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { COLORS, images, SIZES } from '../../constants';
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const slides = [
   {
@@ -27,6 +28,32 @@ const slides = [
 
 const IntroSlider = () => {
   const navigation = useNavigation();
+  
+  const handleNext = async () =>{
+    try {
+        const asyncData = {open: true}
+
+        const jsonValue = JSON.stringify(asyncData)
+        await AsyncStorage.setItem('open', jsonValue)
+        console.log('saved')
+        navigation.navigate("Login")
+    } catch (error) {
+        console.log('error while saving', error)
+    }
+  }
+ 
+
+  //  const handleNext = async ()=>{
+  //   try {
+  //     let app = {open: true}
+  //     const jsonValue = JSON.stringify(value);
+  //     await AsyncStorage.setItem('my-key', jsonValue);
+  //     navigation.navigate("Login")
+
+  //   } catch (e) {
+  //    console.log('error while saving')
+  //   }
+  //  }
 
   const renderItem = ({ item }) => {
     return (
@@ -46,7 +73,7 @@ const IntroSlider = () => {
 
   const renderDoneButton = () => {
     return (
-      <TouchableOpacity onPress={() => navigation.replace('Login')} style={styles.button1}>
+      <TouchableOpacity onPress={() => handleNext()} style={styles.button1}>
         <Text style={styles.buttonText1}>Done</Text>
       </TouchableOpacity>
     );
@@ -54,12 +81,22 @@ const IntroSlider = () => {
 
   const renderNextButton = () => {
     return (
-      <TouchableOpacity onPress={()=> navigation.replace(renderNextButton)} style={styles.button}>
+      <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
       
     );
   };
+
+  const renderSkipButton = () => {
+    return (
+      <TouchableOpacity onPress={()=> handleNext()} style={styles.button}>
+        <Text style={styles.buttonText}>Skip</Text>
+      </TouchableOpacity>
+      
+    );
+  };
+
 
   return (
     <AppIntroSlider
@@ -67,6 +104,10 @@ const IntroSlider = () => {
       renderItem={renderItem}
       renderDoneButton={renderDoneButton}
       renderNextButton={renderNextButton}
+      renderSkipButton={renderSkipButton}
+      showSkipButton={true}
+      showNextButton={true}
+      showDoneButton={true}
       activeDotStyle={styles.activeDot}
       dotStyle={styles.dot}
     />
