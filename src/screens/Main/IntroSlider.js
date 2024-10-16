@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.h2,
     color: COLORS.black,
     textAlign: 'center',
-    marginBottom: 10,
+    marginBottom:SIZES.h4,
    paddingHorizontal: SIZES.h1 *2.5
   },
   text: {
