@@ -23,8 +23,8 @@ const Login = () => {
                           your account</Text>
     </View>
     <FormInput 
-    image={icons.phone}
-    placeholder ={'Phone Number'}/>
+    image={icons.email}
+    placeholder ={'e-mail address'}/>
 
 <FormInput 
     image={icons.lock}

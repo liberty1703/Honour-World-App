@@ -6,23 +6,24 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const SplashScreen = () => {
     const navigation = useNavigation();
-    const  [isFirstTime, setIsFirstTime] = useState(true);
 
     const getAsync = async () =>{
       try {
         const jsonValue = await AsyncStorage.getItem('open')
-        
-        console.log('feeeeeeeeeeee', jsonValue)
 
-        let data = JSON.parse(jsonValue)
+        if (jsonValue != null){
 
-        if(data.open === true){
-          navigation.navigate("Login")
+          let data = JSON.parse(jsonValue)
+
+          if(data.open === true){
+              navigation.navigate("Login")
+          } else{
+              navigation.navigate("IntroSlider")
+          }
         } else{
           navigation.navigate("IntroSlider")
+
         }
-
-
       } catch (error) {
         console.log('error from getting saved', error)
       }
