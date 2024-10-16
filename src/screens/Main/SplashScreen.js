@@ -1,15 +1,29 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { COLORS, FONTS } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
 
 const SplashScreen = () => {
     const navigation = useNavigation();
+    const  [isFirstTime, setIsFirstTime] = useState(true);
+    
     useEffect(()=>{
-        const timer = setTimeout(()=>{
-            navigation.replace('IntroSlider')
-        },3000)
-    },[])
+      const timer = setTimeout(()=> {
+        if (isFirstTime) {
+          navigation.replace('IntroSlider');
+          setIsFirstTime(false);
+        } else{
+          navigation.replace('Login');
+        }
+      }, 3000)
+    }, [isFirstTime])
+
+    // SPLASHSCREEN CODE
+    // useEffect(()=>{
+    //     const timer = setTimeout(()=>{
+    //         navigation.replace('IntroSlider')
+    //     },3000)
+    // },[])
 
 
   return (
