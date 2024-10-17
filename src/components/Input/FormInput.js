@@ -4,7 +4,7 @@ import { TextInput } from 'react-native-paper'
 import { COLORS, FONTS, SIZES } from '../../constants'
 
 
-const FormInput = ({placeholder, image, onPress, icon}) => {
+const FormInput = ({placeholder, image, value, onChangeText, onPress, icon, secureTextEntry}) => {
   return (
     <View style={[ styles.textinputstyl, {marginTop: 25},]}>
 
@@ -14,6 +14,10 @@ const FormInput = ({placeholder, image, onPress, icon}) => {
         />
       <TextInput 
       placeholder={placeholder} 
+      value={value}               
+      onChangeText={onChangeText}   
+      secureTextEntry={secureTextEntry} 
+      // mode='flat'                 
       style={{...FONTS.h3, flex: 1, backgroundColor:'white'}}
       />
       <TouchableOpacity onPress={onPress}>

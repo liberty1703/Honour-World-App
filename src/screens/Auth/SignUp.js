@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, ScrollView} from 'react-native'
+import React, {useState}from 'react'
 import { useNavigation } from '@react-navigation/native'
 import ArrowButton from '../../components/Button/ArrowButton';
 import { COLORS, images, SIZES, FONTS, icons } from '../../constants';
@@ -7,10 +7,45 @@ import FormInput from '../../components/Input/FormInput';
 import ButtonInput from '../../components/Button/ButtonInput';
 import QuestionForm from '../../components/Complaints/QuestionForm';
 import Verify from './Verify';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SignUp = () => {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSignUp = async () => {
+    if (fullName && email && phoneNumber && password) {
+      try {
+        const userData = {
+          fullName,
+          email,
+          phoneNumber,
+          password,
+        };
+        // {Add this to verify the data}
+        console.log("User data being saved:", userData);   
+        await AsyncStorage.setItem('user', JSON.stringify(userData));
+
+      //  {Retrieve the data for testing}
+
+        const savedUserData = await AsyncStorage.getItem('user'); 
+        
+        // {Add this to confirm storage}
+        console.log("Stored user data:", savedUserData);  
+        navigation.navigate('Login');
+      } catch (error) {
+        console.log('Error saving data', error);
+      }
+    } else {
+      Alert.alert('Error', 'Please fill all fields');
+    }
+  };
+  
+
   return (
+    <ScrollView>
     <View style={styles.page}>
 
         {/* {BANNER} */}
@@ -28,18 +63,28 @@ const SignUp = () => {
     <FormInput
     image={icons.name}
     placeholder={'Full Name'}
+    value ={fullName}
+    onChangeText= {text => setFullName(text)}
     /> 
-    <FormInput
-    image={icons.email}
-    placeholder={'E-Maiil'}/>
+  <FormInput
+  image={icons.email}
+  placeholder={'E-Mail'}
+  value={email}
+  onChangeText={text => setEmail(text)}
+/>
     <FormInput
     image={icons.phone}
     placeholder={'Phone Number'}
+    value={phoneNumber}
+    onChangeText={text=> setPhoneNumber(text)}
     />
     <FormInput
     image={icons.lock}
     placeholder={'Password'}
     icon={icons.eye}
+    value={password}
+    onChangeText={text => setPassword(text)}
+    secureTextEntry
     />
    
    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -107,12 +152,13 @@ const SignUp = () => {
 {/* {SIGN UP BUTTON} */}
 <ButtonInput
   text={'Sign Up'}
-  onPress={()=> navigation.navigate(Verify)}
+  onPress={handleSignUp}
   />
 
 {/* {QUESTION BUTTON} */}
 <QuestionForm/>
       </View>
+      </ScrollView>
   )
 }
 
