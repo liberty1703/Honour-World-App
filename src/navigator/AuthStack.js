@@ -15,6 +15,8 @@ import CardScreen from '../screens/Main/Wallet/CardScreen';
 import TransferBalance from '../screens/Main/Transfer/TransferBalance';
 import SplashScreen from '../screens/Main/SplashScreen';
 import IntroSlider from '../screens/Main/IntroSlider';
+import Education from '../screens/Main/Education/Education';
+import Electricity from '../screens/Main/Electricity/Electricity';
 
 
 const  AuthStack = () => {
@@ -35,6 +37,8 @@ const  AuthStack = () => {
     <Stack.Screen name='CreditScreen' component={CreditScreen}/>
     <Stack.Screen name='CardScreen' component={CardScreen}/>
     <Stack.Screen name='TransferBalance' component={TransferBalance}/>
+    <Stack.Screen name='Education' component={Education}/>
+    <Stack.Screen name='Electricity' component={Electricity}/>
   </Stack.Navigator>
   )
 }

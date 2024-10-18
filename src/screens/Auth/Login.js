@@ -31,6 +31,7 @@ const Login = () => {
         
     } catch (error) {
         console.log('Error fetching data', error)
+
     }
  }
   return (

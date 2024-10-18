@@ -35,7 +35,8 @@ const SignUp = () => {
         // {Add this to confirm storage}
         console.log("Stored user data:", savedUserData);  
         navigation.navigate('Login');
-      } catch (error) {
+      } 
+      catch (error) {
         console.log('Error saving data', error);
       }
     } else {
