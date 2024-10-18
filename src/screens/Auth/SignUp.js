@@ -8,6 +8,8 @@ import ButtonInput from '../../components/Button/ButtonInput';
 import QuestionForm from '../../components/Complaints/QuestionForm';
 import Verify from './Verify';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-simple-toast';
+
 
 const SignUp = () => {
   const navigation = useNavigation();
@@ -15,6 +17,40 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleSubmit = async () => {
+    const body = { 
+      fullName,
+      email,
+      phoneNumber,
+      password,
+    };
+    if(!fullName && fullName.length <  5){
+      return Toast.show('enter fullname')
+    } else if (!email){
+      return Toast.show('enter email')
+    } else if (!phoneNumber && phoneNumber.length < 10){
+      return Toast.show('enter phone')
+    } else if (!password){
+      return Toast.show('enter password')
+    } else {
+      let saved = JSON.stringify(body);
+try{
+      const savedToAsync = await AsyncStorage.setItem('login', saved)
+      Toast.show('account created')
+      navigation.navigate("Login")
+
+}catch(error){
+  Toast.show('error')
+}
+
+
+
+    }
+
+  }
+
+
   const handleSignUp = async () => {
     if (fullName && email && phoneNumber && password) {
       try {
@@ -40,7 +76,7 @@ const SignUp = () => {
         console.log('Error saving data', error);
       }
     } else {
-      Alert.alert('Error', 'Please fill all fields');
+      Toast.show("input details")
     }
   };
   
@@ -153,7 +189,7 @@ const SignUp = () => {
 {/* {SIGN UP BUTTON} */}
 <ButtonInput
   text={'Sign Up'}
-  onPress={handleSignUp}
+  onPress={handleSubmit}
   />
 
 {/* {QUESTION BUTTON} */}

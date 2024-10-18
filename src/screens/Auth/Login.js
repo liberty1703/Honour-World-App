@@ -19,32 +19,57 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [load, setLoad] = useState(false);
 
- const handleLogin = async()=> {
-    try {
-        setLoad(true)
-        const storedUSer = await AsyncStorage.getItem('user');
-        if (storedUSer) {
-            const userData = JSON.parse(storedUSer);
-            if (userData.email ===email && userData.password === password)  {
-                // Alert.alert('Success', 'Login Successful!');
-                setLoad(false)
-                Toast.show('Login Successful!')
-                navigation.navigate("Main", {screen:"Bottom"});
-             } else{
-                // Alert.alert('Error', 'Invalid email or password');
-                setLoad(false)
-                Toast.show("Invalid email or password")
-             } 
-        } else{
-            setLoad(false)
-            Alert.alert("Error", 'No user Found, please signup')
-        }
-        
-    } catch (error) {
-        console.log('Error fetching data', error)
+    const handleLogin = async () => {
+        try {
+            const jsonValue = await AsyncStorage.getItem('login')
 
+            const data = JSON.parse(jsonValue)
+
+            console.log('coming', data)
+
+            if(!email && !password){
+                return Toast.show('insert details')
+            } else if (data.email === email &&  data.password === password){
+                Toast.show("login successfully")
+                navigation.navigate("Main", {screen:"Bottom"});
+            } else if (data.email !== email && data.password !== password){
+                Toast.show("incorrect details")
+            } else{
+                Toast.show('login failed')
+            }
+
+        
+        } catch (error) {
+            Toast.show('error')
+        }
     }
- }
+
+//  const handleLogin = async()=> {
+//     try {
+//         setLoad(true)
+//         const storedUSer = await AsyncStorage.getItem('user');
+//         if (storedUSer) {
+//             const userData = JSON.parse(storedUSer);
+//             if (userData.email ===email && userData.password === password)  {
+//                 // Alert.alert('Success', 'Login Successful!');
+//                 setLoad(false)
+//                 Toast.show('Login Successful!')
+                // navigation.navigate("Main", {screen:"Bottom"});
+//              } else{
+//                 // Alert.alert('Error', 'Invalid email or password');
+//                 setLoad(false)
+//                 Toast.show("Invalid email or password")
+//              } 
+//         } else{
+//             setLoad(false)
+//             Alert.alert("Error", 'No user Found, please signup')
+//         }
+        
+//     } catch (error) {
+//         console.log('Error fetching data', error)
+
+//     }
+//  }
   return (
     <ScrollView>
         <Spinner 
