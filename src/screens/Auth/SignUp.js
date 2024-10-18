@@ -65,7 +65,7 @@ const SignUp = () => {
           <FormInput
             image={icons.name}
             placeholder={'Full Name'}
-            value={fullname}
+            value={fullName}
             onChangeText={setFullName}
           />
           <FormInput
