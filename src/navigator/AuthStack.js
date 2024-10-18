@@ -17,25 +17,25 @@ import SplashScreen from '../screens/Main/SplashScreen';
 import IntroSlider from '../screens/Main/IntroSlider';
 
 
-const  AuthStack = () => {
-    const Stack = createNativeStackNavigator();
+const AuthStack = () => {
+  const Stack = createNativeStackNavigator();
   return (
-  <Stack.Navigator screenOptions={{headerShown: false}}>
-    <Stack.Screen name='SplashScreen' component={SplashScreen}/>
-   <Stack.Screen name='IntroSlider' component={IntroSlider}/>
-    <Stack.Screen name='Login' component={Login}/>
-    <Stack.Screen name='SignUp' component={SignUp}/>
-    <Stack.Screen name= 'Verify' component={Verify}/>
-    <Stack.Screen name='AccountCreated' component={AccountCreated}/>
-    <Stack.Screen name='FingerPrintAuth' component={FingerPrintAuth}/>
-    <Stack.Screen name='Airtime' component={Airtime}/>
-    <Stack.Screen name='Confirmation' component={Confirmation}/>
-    <Stack.Screen name='Successful' component={Successful}/>
-    <Stack.Screen name='HonourScreen' component={HonourScreen}/>
-    <Stack.Screen name='CreditScreen' component={CreditScreen}/>
-    <Stack.Screen name='CardScreen' component={CardScreen}/>
-    <Stack.Screen name='TransferBalance' component={TransferBalance}/>
-  </Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name='SplashScreen' component={SplashScreen} />
+      <Stack.Screen name='IntroSlider' component={IntroSlider} />
+      <Stack.Screen name='SignUp' component={SignUp} />
+      <Stack.Screen name='Login' component={Login} />
+      <Stack.Screen name='Verify' component={Verify} />
+      <Stack.Screen name='AccountCreated' component={AccountCreated} />
+      <Stack.Screen name='FingerPrintAuth' component={FingerPrintAuth} />
+      <Stack.Screen name='Airtime' component={Airtime} />
+      <Stack.Screen name='Confirmation' component={Confirmation} />
+      <Stack.Screen name='Successful' component={Successful} />
+      <Stack.Screen name='HonourScreen' component={HonourScreen} />
+      <Stack.Screen name='CreditScreen' component={CreditScreen} />
+      <Stack.Screen name='CardScreen' component={CardScreen} />
+      <Stack.Screen name='TransferBalance' component={TransferBalance} />
+    </Stack.Navigator>
   )
 }
 

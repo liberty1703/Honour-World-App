@@ -17,24 +17,24 @@ const WalletScreen = () => {
   const navigation = useNavigation();
 
   const handlePress = (id) => {
-    if (id===1){
-        navigation.navigate('HonourScreen')
+    if (id === 1) {
+      navigation.navigate('HonourScreen')
     }
-    else if (id===6) {
+    else if (id === 6) {
       navigation.navigate('CreditScreen')
     }
   };
   return (
     <View style={styles.page}>
       <ArrowButton2 text={'Home'} />
-      <Image 
-        source={icons.cash} 
+      <Image
+        source={icons.cash}
         style={{
-          height: SIZES.h1 * 2.8, 
-          width: SIZES.h1 * 2.8, 
-          justifyContent: 'center', 
+          height: SIZES.h1 * 2.8,
+          width: SIZES.h1 * 2.8,
+          justifyContent: 'center',
           alignSelf: 'center'
-        }} 
+        }}
       />
       <Text style={{ ...FONTS.h3a, color: COLORS.primary, textAlign: 'center', marginTop: SIZES.h3 }}>
         Fund Wallet
@@ -42,7 +42,7 @@ const WalletScreen = () => {
       <Text style={{ ...FONTS.body3a, textAlign: 'center', marginTop: SIZES.h3 }}>
         Add Money to your wallet using {"\n"} any of these methods
       </Text>
-      
+
       {/* FlatList for WalletData */}
       <FlatList
         data={WalletData}
@@ -54,7 +54,7 @@ const WalletScreen = () => {
                 <Image source={item.image} style={styles.iconImage} />
                 <Text style={styles.itemText}>{item.text}</Text>
               </View>
-              <TouchableOpacity style={styles.arrowCircle} onPress={()=> handlePress(item.id)}>
+              <TouchableOpacity style={styles.arrowCircle} onPress={() => handlePress(item.id)}>
                 <Image source={icons.arrowright} style={styles.arrowIcon} />
               </TouchableOpacity>
             </View>
@@ -75,42 +75,42 @@ const styles = StyleSheet.create({
     paddingHorizontal: SIZES.h5,
   },
   ctn: {
-    height: SIZES.h1 * 2, 
+    height: SIZES.h1 * 2,
     backgroundColor: COLORS.background,
-    borderWidth: 0.5, 
-    borderColor: COLORS.primary,  
-    borderRadius: 10,  
-    flexDirection: 'row',  
-    alignItems: 'center',  
-    justifyContent: 'space-between',  
-    paddingHorizontal: SIZES.h5,  
-    marginVertical: 8, 
+    borderWidth: 0.5,
+    borderColor: COLORS.primary,
+    borderRadius: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: SIZES.h5,
+    marginVertical: 8,
   },
   imageTextContainer: {
-    flexDirection: 'row',  
+    flexDirection: 'row',
     alignItems: 'center',  // Vertically align image and text
   },
   iconImage: {
     width: SIZES.h5 * 1.8, // Smaller image size
-    height: SIZES.h5 * 1.8, 
-    resizeMode: 'contain',  
+    height: SIZES.h5 * 1.8,
+    resizeMode: 'contain',
   },
   itemText: {
-    ...FONTS.h5,  
+    ...FONTS.h5,
     marginLeft: SIZES.base * 0.5, // Reduced the gap between the image and text
   },
   arrowCircle: {
-    width: SIZES.h1,  
-    height: SIZES.h1,  
-    borderRadius: SIZES.h1 / 2,  
+    width: SIZES.h1,
+    height: SIZES.h1,
+    borderRadius: SIZES.h1 / 2,
     borderWidth: 1,
     borderColor: COLORS.primary,
-    justifyContent: 'center',  
+    justifyContent: 'center',
     alignItems: 'center',
   },
   arrowIcon: {
-    width: SIZES.h5 * 1,  
+    width: SIZES.h5 * 1,
     height: SIZES.h5 * 1.5,
-    tintColor: COLORS.primary,  
+    tintColor: COLORS.primary,
   },
 });

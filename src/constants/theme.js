@@ -73,12 +73,6 @@ export const FONTS = {
         lineHeight: screenHeight * 0.0375,
         color: COLORS.black,
     },
-    h2: {
-        fontFamily: 'GeneralSans-Bold',
-        fontSize: SIZES.h2,
-        lineHeight: screenHeight * 0.0375,
-        color: COLORS.black,
-    },
     h3: {
         fontFamily: 'GeneralSans-Bold',
         fontSize: SIZES.h3,
