@@ -25,7 +25,11 @@ const ServiceScreen = () => {
       navigation.navigate('Data'); // Navigate to Data screen
     } else if (id === 3) {
       navigation.navigate('CableTV'); // Navigate to Cable TV screen
-    } 
+    } else if (id===4) {
+      navigation.navigate('Electricity');
+    } else if (id===5) {
+      navigation.navigate('Education')
+    }
   };
   return (
     <View style={styles.page}>

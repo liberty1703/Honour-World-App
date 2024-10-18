@@ -6,16 +6,24 @@ import { useNavigation } from '@react-navigation/native';
 const ArrowButton1 = ({ text, onPress }) => {
   const navigation = useNavigation();
   return (
-    <View style={{ flexDirection: 'row',  }}>
-      <TouchableOpacity onPress={onPress} style={{ flexDirection: 'row', paddingHorizontal: 10 }}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 10 }}>
+      {/* Back button */}
+      <TouchableOpacity onPress={onPress} style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Image source={icons.arrow} style={{ height: SIZES.body4, width: SIZES.body4 }} />
         <Text style={{ ...FONTS.body3, marginLeft: 10 }}>
           Back
         </Text>
       </TouchableOpacity>
-      <Text style={{ ...FONTS.h4, color: COLORS.primary, flex: 1, textAlign: 'center' }}>
-        {text}
-      </Text>
+
+      {/* Centered text */}
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ ...FONTS.h4, color: COLORS.primary }}>
+          {text}
+        </Text>
+      </View>
+      
+      {/* Placeholder for spacing */}
+      <View style={{ width: SIZES.body4 + 10 }} />
     </View>
   );
 };

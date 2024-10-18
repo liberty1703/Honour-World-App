@@ -41,6 +41,8 @@ const boxarrrow = require('../assets/icons/boxarrrow.png')
 const monniepoint = require('../assets/icons/monniepoint.png')
 const card = require('../assets/icons/card.png')
 const droparrow = require('../assets/icons/droparrow.png')
+const waec = require('../assets/icons/waec.png')
+const neco = require('../assets/icons/neco.png')
 export default {
     arrow,
     box,
@@ -85,4 +87,6 @@ export default {
      monniepoint,
      card,
      droparrow,
+     waec,
+     neco,
 }

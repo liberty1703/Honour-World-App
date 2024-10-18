@@ -15,6 +15,8 @@ import CardScreen from '../screens/Main/Wallet/CardScreen';
 import TransferBalance from '../screens/Main/Transfer/TransferBalance';
 import SplashScreen from '../screens/Main/SplashScreen';
 import IntroSlider from '../screens/Main/IntroSlider';
+import Education from '../screens/Main/Education/Education';
+import Electricity from '../screens/Main/Electricity/Electricity';
 
 
 const AuthStack = () => {
@@ -23,8 +25,8 @@ const AuthStack = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='SplashScreen' component={SplashScreen} />
       <Stack.Screen name='IntroSlider' component={IntroSlider} />
-      <Stack.Screen name='SignUp' component={SignUp} />
       <Stack.Screen name='Login' component={Login} />
+      <Stack.Screen name='SignUp' component={SignUp} />
       <Stack.Screen name='Verify' component={Verify} />
       <Stack.Screen name='AccountCreated' component={AccountCreated} />
       <Stack.Screen name='FingerPrintAuth' component={FingerPrintAuth} />
@@ -35,6 +37,8 @@ const AuthStack = () => {
       <Stack.Screen name='CreditScreen' component={CreditScreen} />
       <Stack.Screen name='CardScreen' component={CardScreen} />
       <Stack.Screen name='TransferBalance' component={TransferBalance} />
+      <Stack.Screen name='Education' component={Education} />
+      <Stack.Screen name='Electricity' component={Electricity} />
     </Stack.Navigator>
   )
 }

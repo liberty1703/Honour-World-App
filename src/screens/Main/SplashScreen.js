@@ -6,38 +6,51 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const SplashScreen = () => {
   const navigation = useNavigation();
-  const [isFirstTime, setIsFirstTime] = useState(true);
 
   const getAsync = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('open')
-      navigation.replace('SignUp')
+
+      if (jsonValue != null) {
+
+        let data = JSON.parse(jsonValue)
+
+        if (data.open === true) {
+          navigation.navigate("Login")
+        } else {
+          navigation.navigate("IntroSlider")
+        }
+      } else {
+        navigation.navigate("IntroSlider")
+
+      }
+    } catch (error) {
+      console.log('error from getting saved', error)
     }
-    catch (error) {
-      console.log('error', error)
-    }
-    //   if (jsonValue != null) {
-
-    //     // return jsonValue != null ? JSON.parse(jsonValue) : null;
-
-    //     console.log('feeeeeeeeeeee', jsonValue)
-
-    //     let data = JSON.parse(jsonValue)
-
-    //     if (data.open === true) {
-    //       navigation.replace("Login")
-    //     } else {
-    //       navigation.replace("IntroSlider")
-    //     }
-    //   } else {
-    //     navigation.replace("IntroSlider")
-    //   }
-
-
-    // } catch (error) {
-    //   console.log('error from getting saved', error)
-    // }
   }
+
+  //   if (jsonValue != null) {
+
+  //     // return jsonValue != null ? JSON.parse(jsonValue) : null;
+
+  //     console.log('feeeeeeeeeeee', jsonValue)
+
+  //     let data = JSON.parse(jsonValue)
+
+  //     if (data.open === true) {
+  //       navigation.replace("Login")
+  //     } else {
+  //       navigation.replace("IntroSlider")
+  //     }
+  //   } else {
+  //     navigation.replace("IntroSlider")
+  //   }
+
+
+  // } catch (error) {
+  //   console.log('error from getting saved', error)
+  // }
+
 
   useEffect(() => {
     getAsync()
