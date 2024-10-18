@@ -9,23 +9,34 @@ import SignUp from './SignUp';
 import LogoButton from '../../components/Button/LogoButton';
 import { Screen } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-simple-toast';
+import Spinner from 'react-native-loading-spinner-overlay';
+
 
 const Login = () => {
     const navigation = useNavigation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [load, setLoad] = useState(false);
+
  const handleLogin = async()=> {
     try {
+        setLoad(true)
         const storedUSer = await AsyncStorage.getItem('user');
         if (storedUSer) {
             const userData = JSON.parse(storedUSer);
             if (userData.email ===email && userData.password === password)  {
-                Alert.alert('Success', 'Login Successful!');
+                // Alert.alert('Success', 'Login Successful!');
+                setLoad(false)
+                Toast.show('Login Successful!')
                 navigation.navigate("Main", {screen:"Bottom"});
              } else{
-                Alert.alert('Error', 'Invalid email or password');
+                // Alert.alert('Error', 'Invalid email or password');
+                setLoad(false)
+                Toast.show("Invalid email or password")
              } 
         } else{
+            setLoad(false)
             Alert.alert("Error", 'No user Found, please signup')
         }
         
@@ -36,6 +47,13 @@ const Login = () => {
  }
   return (
     <ScrollView>
+        <Spinner 
+                visible={load}
+                color={COLORS.primary}
+                // textContent='Hello'
+                cancelable={true}
+
+         />
     <View style ={styles.page}> 
 
      {/* <LogoButton images={images.logo}/> */}
