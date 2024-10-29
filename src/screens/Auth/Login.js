@@ -20,8 +20,8 @@ const Login = () => {
         try {
             const userData = await AsyncStorage.getItem('user');
             if (userData) {
-                const userData = JSON.parse(userData);
-                if (userData.email === email && userData.password === password) {
+                const userDatas = JSON.parse(userData);
+                if (userDatas.email === email && userDatas.password === password) {
                     Alert.alert('Success', 'Login Succesful');
                     navigation.navigate('Main', { screen: "Bottom" });
                 }
