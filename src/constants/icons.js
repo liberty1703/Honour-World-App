@@ -1,8 +1,8 @@
 const arrow = require('../assets/icons/arrow.png');
 const box = require('../assets/icons/box.png');
 const email = require('../assets/icons/email.png');
-const eye = require('../assets/icons/eye.png');
-const eyeOpen = require('../assets/icons/eye open.png');
+const eyeClosed = require('../assets/icons/eye-closed.png');
+const eyeOpen = require('../assets/icons/eye-open.png');
 const fingerprint = require('../assets/icons/fingerprint.png');
 const lock = require('../assets/icons/lock.png');
 const name = require('../assets/icons/name.png');
@@ -46,7 +46,7 @@ export default {
     arrow,
     box,
     email,
-    eye,
+    eyeClosed,
     eyeOpen,
     fingerprint,
     lock,

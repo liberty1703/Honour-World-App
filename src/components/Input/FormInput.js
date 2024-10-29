@@ -9,6 +9,7 @@ const FormInput = ({ placeholder, image, icon, onPress, secureTextEntry, onChang
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
+    console.log('isPasswordVisible', isPasswordVisible)
   };
 
   return (
@@ -25,13 +26,31 @@ const FormInput = ({ placeholder, image, icon, onPress, secureTextEntry, onChang
         value={value}
         onChangeText={onChangeText}
       />
-      <TouchableOpacity activeOpacity={0.3} onPress={onPress}>
+      <TouchableOpacity
+        activeOpacity={0.3}
+        onPress={onPress}
+        accessible
+        accessibilityLabel={isPasswordVisible ? 'Hide password' : 'Show password'}
+      >
         <Image
           source={icon}
-          style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }}
+          style={{ height: 24, width: 24 }}
 
         />
       </TouchableOpacity>
+
+      {/* <TouchableOpacity
+        activeOpacity={0.3}
+        onPress={togglePasswordVisibility}
+        accessible
+        accessibilityLabel={isPasswordVisible ? 'Hide password' : 'Show password'}
+      >
+        <Image
+          source={isPasswordVisible ? require('../../assets/icons/eye-closed.png') : require('../../assets/icons/eye-open.png')}
+          style={{ height: 24, width: 24 }}
+
+        />
+      </TouchableOpacity> */}
     </View>
   )
 }

@@ -85,7 +85,7 @@ const SignUp = () => {
           value={password}
           onChangeText={text => setPassword(text)}
           secureTextEntry
-          icon={icons.eye}
+          icon={icons.eyeClosed}
         />
 
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
