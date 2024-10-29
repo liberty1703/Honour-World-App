@@ -4,7 +4,6 @@ import AppIntroSlider from 'react-native-app-intro-slider';
 import { COLORS, images, SIZES } from '../../constants';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import App from '../../../App';
 
 const slides = [
   {
