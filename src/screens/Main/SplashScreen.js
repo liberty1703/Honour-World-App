@@ -1,4 +1,4 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native'
+import { StatusBar, StyleSheet, Text, View, ActivityIndicatorBase } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { COLORS, FONTS } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
@@ -8,58 +8,45 @@ const SplashScreen = () => {
   const navigation = useNavigation();
   const [isFirstTime, setIsFirstTime] = useState(true);
 
-  const getAsync = async () => {
+  const cool = async () => {
     try {
       const jsonValue = await AsyncStorage.getItem('open')
-      navigation.replace('SignUp')
+      if (!jsonValue) {
+        console.log('First time logging in'); //first time opening the app
+        navigation.replace('IntroSlider');
+      } else {
+        await AsyncStorage.setItem('open', jsonValue); //App has opened before
+        console.log('Openend before')
+      }
     }
     catch (error) {
-      console.log('error', error)
+      console.log('Error saving item', error)
+      navigation.replace('Login');
     }
-    //   if (jsonValue != null) {
-
-    //     // return jsonValue != null ? JSON.parse(jsonValue) : null;
-
-    //     console.log('feeeeeeeeeeee', jsonValue)
-
-    //     let data = JSON.parse(jsonValue)
-
-    //     if (data.open === true) {
-    //       navigation.replace("Login")
-    //     } else {
-    //       navigation.replace("IntroSlider")
-    //     }
-    //   } else {
-    //     navigation.replace("IntroSlider")
-    //   }
-
-
-    // } catch (error) {
-    //   console.log('error from getting saved', error)
-    // }
-  }
+  };
 
   useEffect(() => {
-    getAsync()
-  }, [])
+    cool();
+  },)
 
-  // useEffect(()=>{
-  //   const timer = setTimeout(()=> {
+  // useEffect(() => {
+  //   getAsync()
+  //   // return () => clearTimeout(timer) // Clear the timer when the component unmounts to prevent memory leaks
+  // }, [])
+
+
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
   //     if (isFirstTime) {
-  //       navigation.replace('IntroSlider');
   //       setIsFirstTime(false);
-  //     } else{
+  //       navigation.replace('IntroSlider');
+  //     } else {
   //       navigation.replace('Login');
   //     }
   //   }, 3000)
-  // }, [isFirstTime])
+  // }, [isFirstTime, navigation])
 
-  // SPLASHSCREEN CODE
-  // useEffect(()=>{
-  //     const timer = setTimeout(()=>{
-  //         navigation.replace('IntroSlider')
-  //     },3000)
-  // },[])
 
 
   return (

@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet } from 'react-native'
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Login from '../screens/Auth/Login';
 import SignUp from '../screens/Auth/SignUp';
@@ -36,9 +36,9 @@ const AuthStack = () => {
       <Stack.Screen name='CardScreen' component={CardScreen} />
       <Stack.Screen name='TransferBalance' component={TransferBalance} />
     </Stack.Navigator>
-  )
-}
+  );
+};
 
-export default AuthStack
+export default AuthStack;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
