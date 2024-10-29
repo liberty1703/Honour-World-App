@@ -17,6 +17,7 @@ const SplashScreen = () => {
       } else {
         await AsyncStorage.setItem('open', jsonValue); //App has opened before
         console.log('Openend before')
+        navigation.replace('Login'); //login
       }
     }
     catch (error) {
@@ -33,21 +34,6 @@ const SplashScreen = () => {
   //   getAsync()
   //   // return () => clearTimeout(timer) // Clear the timer when the component unmounts to prevent memory leaks
   // }, [])
-
-
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     if (isFirstTime) {
-  //       setIsFirstTime(false);
-  //       navigation.replace('IntroSlider');
-  //     } else {
-  //       navigation.replace('Login');
-  //     }
-  //   }, 3000)
-  // }, [isFirstTime, navigation])
-
-
 
   return (
     <View style={styles.page}>

@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, StatusBar } from 'react-native';
-import React from 'react';
+import React, { useRef } from 'react';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { COLORS, images, SIZES } from '../../constants';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import App from '../../../App';
 
 const slides = [
   {
@@ -28,6 +29,7 @@ const slides = [
 
 const IntroSlider = () => {
   const navigation = useNavigation();
+  const sliderRef = useRef(null)
 
   const handleNext = async () => {
     try {
@@ -68,7 +70,7 @@ const IntroSlider = () => {
 
   const renderNextButton = () => {
     return (
-      <TouchableOpacity onPress={renderSkipButton} style={styles.button}>
+      <TouchableOpacity onPress={() => sliderRef.current?.goToSlide(sliderRef.current.state.activeIndex + 1)} style={styles.button}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
 
@@ -88,6 +90,7 @@ const IntroSlider = () => {
   return (
     <AppIntroSlider
       data={slides}
+      ref={sliderRef}
       renderItem={renderItem}
       renderDoneButton={renderDoneButton}
       renderNextButton={renderNextButton}

@@ -13,8 +13,8 @@ import HonourScreen from '../screens/Main/Wallet/HonourScreen';
 import CreditScreen from '../screens/Main/Wallet/CreditScreen';
 import CardScreen from '../screens/Main/Wallet/CardScreen';
 import TransferBalance from '../screens/Main/Transfer/TransferBalance';
-import SplashScreen from '../screens/Main/SplashScreen';
-import IntroSlider from '../screens/Main/IntroSlider';
+import SplashScreen from '../screens/Auth/SplashScreen';
+import IntroSlider from '../screens/Auth/IntroSlider';
 
 
 const AuthStack = () => {

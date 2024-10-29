@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput } from 'react-native-paper'
-import { COLORS, FONTS, SIZES } from '../../constants'
+import { COLORS, FONTS, SIZES, images, icons } from '../../constants'
 
 
 const FormInput = ({ placeholder, image, onPress, icon, secureTextEntry, onChangeText, value }) => {
@@ -10,7 +10,7 @@ const FormInput = ({ placeholder, image, onPress, icon, secureTextEntry, onChang
     <View style={[styles.textinputstyl, { marginTop: 22 },]}>
 
       <Image
-        source={image}
+        source={images.men}
         style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }}
       />
       <TextInput
@@ -22,7 +22,7 @@ const FormInput = ({ placeholder, image, onPress, icon, secureTextEntry, onChang
       />
       <TouchableOpacity onPress={onPress}>
         <Image
-          source={icon}
+          source={icons.eye}
           style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }}
 
         />
