@@ -1,10 +1,15 @@
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { TextInput } from 'react-native-paper'
-import { COLORS, FONTS, SIZES, images, icons } from '../../constants'
+import { COLORS, FONTS, SIZES } from '../../constants'
 
 
-const FormInput = ({ placeholder, image, onPress, secureTextEntry, onChangeText, value }) => {
+const FormInput = ({ placeholder, image, icon, onPress, secureTextEntry, onChangeText, value }) => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
 
   return (
     <View style={[styles.textinputstyl, { marginTop: 22 },]}>
@@ -22,7 +27,7 @@ const FormInput = ({ placeholder, image, onPress, secureTextEntry, onChangeText,
       />
       <TouchableOpacity activeOpacity={0.3} onPress={onPress}>
         <Image
-          source={image}
+          source={icon}
           style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }}
 
         />

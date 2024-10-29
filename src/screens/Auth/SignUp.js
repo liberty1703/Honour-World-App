@@ -8,7 +8,6 @@ import ButtonInput from '../../components/Button/ButtonInput';
 import QuestionForm from '../../components/Complaints/QuestionForm';
 import Verify from './Verify';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Login from './Login';
 
 const SignUp = () => {
   const navigation = useNavigation();
@@ -17,6 +16,7 @@ const SignUp = () => {
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [iconChange, setIconChange] = useState('');
 
   const handleSignUp = async () => {
     if (fullname && email && password && phoneNumber) {

@@ -2,8 +2,9 @@ const arrow = require('../assets/icons/arrow.png');
 const box = require('../assets/icons/box.png');
 const email = require('../assets/icons/email.png');
 const eye = require('../assets/icons/eye.png');
-const fingerprint = require ('../assets/icons/fingerprint.png');
-const lock = require ('../assets/icons/lock.png');
+const eyeOpen = require('../assets/icons/eye open.png');
+const fingerprint = require('../assets/icons/fingerprint.png');
+const lock = require('../assets/icons/lock.png');
 const name = require('../assets/icons/name.png');
 const phone = require('../assets/icons/phone.png');
 const whatsapp = require('../assets/icons/whatsapp.png');
@@ -11,7 +12,7 @@ const home = require('../assets/icons/home.png')
 const notification = require('../assets/icons/notification.png')
 const copy = require('../assets/icons/copy.png')
 const cash = require('../assets/icons/cash.png')
-const transfer = require ('../assets/icons/transfer.png')
+const transfer = require('../assets/icons/transfer.png')
 const more = require('../assets/icons/more.png')
 const phonecall = require('../assets/icons/phonecall.png')
 const data = require('../assets/icons/data.png')
@@ -46,6 +47,7 @@ export default {
     box,
     email,
     eye,
+    eyeOpen,
     fingerprint,
     lock,
     name,
@@ -64,25 +66,25 @@ export default {
     glo,
     airtel,
     ninemobile,
-     caution,
-     contacts,
-     validation,
-     check,
-     share,
-     service,
-     electricity,
-     education,
-     autobuy,
-     airtime,
-     cgwallet,
-     biz,
-     wallet,
-     user,
-     arrowright,
-     wema,
-     circlered,
-     boxarrrow,
-     monniepoint,
-     card,
-     droparrow,
+    caution,
+    contacts,
+    validation,
+    check,
+    share,
+    service,
+    electricity,
+    education,
+    autobuy,
+    airtime,
+    cgwallet,
+    biz,
+    wallet,
+    user,
+    arrowright,
+    wema,
+    circlered,
+    boxarrrow,
+    monniepoint,
+    card,
+    droparrow,
 }
