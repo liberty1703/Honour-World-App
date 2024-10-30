@@ -126,7 +126,8 @@ const Airtime = () => {
           {/* PAYMENT BUTTON */}
           <ButtonInput
             text={'Make Payment'}
-            onPress={() => navigation.navigate(Confirmation)} />
+            onPress={() => // For nested navigation
+              navigation.navigate('Auth', { screen: 'Confirmation' })} />
         </View>
 
       </ScrollView>

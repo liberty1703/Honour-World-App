@@ -107,7 +107,7 @@ const Successful = ({ onPress }) => {
     )
 }
 
-export default Successful
+export default Successful;
 
 const styles = StyleSheet.create({
     page: {

@@ -7,8 +7,6 @@ import ButtonInput from '../../../components/Button/ButtonInput'
 import HomeButton from '../../../components/Button/HomeButton'
 import Successful from '../Succesful/Successful';
 
-
-
 const Confirmation = () => {
     const navigation = useNavigation();
     return (
