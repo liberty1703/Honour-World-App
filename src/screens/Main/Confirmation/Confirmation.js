@@ -5,7 +5,8 @@ import ArrowButton1 from '../../../components/Button/ArrowButton1'
 import { useNavigation } from '@react-navigation/native'
 import ButtonInput from '../../../components/Button/ButtonInput'
 import HomeButton from '../../../components/Button/HomeButton'
-import Successful from '../Succesful/Successful'
+import Successful from '../Succesful/Successful';
+
 
 
 const Confirmation = () => {

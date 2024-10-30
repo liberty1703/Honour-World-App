@@ -22,6 +22,8 @@ const Login = () => {
             if (userData) {
                 const userDatas = JSON.parse(userData);
                 if (userDatas.email === email && userDatas.password === password) {
+                    console.log('Login details', userData)
+                    console.log('Login Succesful')
                     Alert.alert('Success', 'Login Succesful');
                     navigation.replace('Main', { screen: "Bottom" });
                 }
@@ -32,7 +34,7 @@ const Login = () => {
         } catch (error) {
             console.log('error fetching data', error)
         }
-    }
+    };
     return (
         <View style={styles.page}>
 

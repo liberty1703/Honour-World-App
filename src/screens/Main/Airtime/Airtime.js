@@ -122,11 +122,11 @@ const Airtime = () => {
           <Text style={{ ...FONTS.h4, textAlignVertical: 'center' }}>Save as beneficiary</Text>
         </View>
         <View style={{ marginBottom: SIZES.h3 }}>
-        
-{/* PAYMENT BUTTON */}
-           <ButtonInput
+
+          {/* PAYMENT BUTTON */}
+          <ButtonInput
             text={'Make Payment'}
-            onPress={()=>navigation.navigate(Confirmation)} />
+            onPress={() => navigation.navigate(Confirmation)} />
         </View>
 
       </ScrollView>
@@ -195,6 +195,6 @@ const styles = StyleSheet.create({
     marginTop: SIZES.h3,
     justifyContent: 'center',
     paddingHorizontal: SIZES.h4,
-    borderRadius: SIZES.h1
+    // borderRadius: SIZES.h1
   }
 });
