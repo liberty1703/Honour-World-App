@@ -83,10 +83,10 @@ const Confirmation = () => {
                 </View>
             </View>
             <ButtonInput
-            text={'Make Payment'}
-            onPress={()=> navigation.navigate(Successful)}
+                text={'Make Payment'}
+                onPress={() => navigation.navigate(Successful)}
             />
-            <HomeButton/>
+            <HomeButton onPress={() => navigation.replace('HomeScreen')} />
         </View>
     )
 }

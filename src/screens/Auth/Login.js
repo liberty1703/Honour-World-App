@@ -23,7 +23,7 @@ const Login = () => {
                 const userDatas = JSON.parse(userData);
                 if (userDatas.email === email && userDatas.password === password) {
                     Alert.alert('Success', 'Login Succesful');
-                    navigation.navigate('Main', { screen: "Bottom" });
+                    navigation.replace('Main', { screen: "Bottom" });
                 }
             }
             else {

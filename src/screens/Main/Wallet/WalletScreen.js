@@ -3,6 +3,7 @@ import React from 'react';
 import { COLORS, FONTS, icons, SIZES } from '../../../constants';
 import ArrowButton2 from '../../../components/Button/ArrowButon2';
 import { useNavigation } from '@react-navigation/native';
+// import HonourScreen from './HonourScreen';
 
 const WalletData = [
   { id: 1, text: 'Honour World Wema Account', image: icons.wema },
@@ -18,7 +19,7 @@ const WalletScreen = () => {
 
   const handlePress = (id) => {
     if (id === 1) {
-      navigation.navigate('HonourScreen')
+      navigation.navigate("HonourScreen")
     }
     else if (id === 6) {
       navigation.navigate('CreditScreen')

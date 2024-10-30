@@ -51,7 +51,7 @@ const HomeScreen = () => {
         {/* Image */}
         <TouchableOpacity>
           <Image style={styles.imagectn} source={images.men}
-          
+
           />
         </TouchableOpacity>
 
@@ -111,7 +111,7 @@ const HomeScreen = () => {
             <Image source={icons.cash} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
             <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={()=> navigation.navigate(TransferBalance)}>
+          <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={() => navigation.navigate(TransferBalance)}>
             <Image source={icons.transfer} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
             <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Transfer Balance</Text>
           </TouchableOpacity>
@@ -120,69 +120,69 @@ const HomeScreen = () => {
       <Text style={{ ...FONTS.h3, marginTop: SIZES.h4 }}>
         Quick Actions
       </Text>
-     <View>
-     <FlatList
-      data={ActionsData}
-      horizontal={true}
-      showsHorizontalScrollIndicator= {false}
-      keyExtractor={(item) => item.id.toString()}
-      renderItem={({item}) =>{
-        return(
-          <TouchableOpacity style={styles.ctn} onPress={() => handlePress(item.id)}>
-            <Image source={item.image}
-            style={styles.iconStyle}
-            />
-            <Text style={{...FONTS.body3a}}>
-              {item.subtitle}
-            </Text>
-          </TouchableOpacity>
-        )
-      }}
+      <View>
+        <FlatList
+          data={ActionsData}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity style={styles.ctn} onPress={() => handlePress(item.id)}>
+                <Image source={item.image}
+                  style={styles.iconStyle}
+                />
+                <Text style={{ ...FONTS.body5 }}>
+                  {item.subtitle}
+                </Text>
+              </TouchableOpacity>
+            )
+          }}
+        />
+      </View>
+      <Image source={images.buydata}
+        style={styles.imagectn1} />
+
+      <View style={{ flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
+        <Text style={{ ...FONTS.body3, }}>
+          Recent Transcation
+        </Text>
+        <TouchableOpacity>
+          <Text style={{ ...FONTS.body3, textDecorationLine: 'underline', color: COLORS.green }}>
+            Sell all
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <FlatList
+        data={transactionsData}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => {
+          return (
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              {/* Image */}
+              <View>
+                <Image style={styles.imagectn2} source={icons.mtn} />
+              </View>
+
+              {/* Text Container */}
+              <View style={{ flexDirection: 'column', flex: 1 }}>
+                {/* Title and Amount Row */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                  <Text style={{ ...FONTS.h3 }}>{item.title}</Text>
+                  <Text style={{ ...FONTS.h3 }}>{item.amount}</Text>
+                </View>
+
+                {/* Date and Status Row */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                  <Text style={{ ...FONTS.body4 }}>{item.date}</Text>
+                  <Text style={{ ...FONTS.body4, color: COLORS.green }}>{item.status}</Text>
+                </View>
+              </View>
+            </View>
+          );
+        }}
       />
-     </View>
-<Image source={images.buydata}
-style={styles.imagectn1}/>
-
-<View style={{flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical:'center', justifyContent: 'space-between'}}>
-  <Text style={{...FONTS.body3, }}>
-     Recent Transcation
-  </Text>
- <TouchableOpacity>
- <Text style={{...FONTS.body3, textDecorationLine: 'underline', color: COLORS.green}}>
-    Sell all
-  </Text>
- </TouchableOpacity>
-</View>
-<FlatList
-      data={transactionsData}
-      keyExtractor={(item) => item.id}
-      showsVerticalScrollIndicator={false} 
-      renderItem={({ item }) => {
-        return (
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-            {/* Image */}
-            <View>
-              <Image style={styles.imagectn2} source={icons.mtn} />
-            </View>
-
-            {/* Text Container */}
-            <View style={{ flexDirection: 'column', flex: 1 }}>
-              {/* Title and Amount Row */}
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Text style={{ ...FONTS.h3 }}>{item.title}</Text>
-                <Text style={{ ...FONTS.h3 }}>{item.amount}</Text>
-              </View>
-
-              {/* Date and Status Row */}
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                <Text style={{ ...FONTS.body4 }}>{item.date}</Text>
-                <Text style={{ ...FONTS.body4, color: COLORS.green }}>{item.status}</Text>
-              </View>
-            </View>
-          </View>
-        );
-      }}
-    />
     </View>
   )
 }
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     width: SIZES.h1 * 12.5,
     backgroundColor: COLORS.primary,
     borderRadius: 25,
-    marginTop: SIZES.h1 -15,
+    marginTop: SIZES.h1 - 15,
     paddingHorizontal: 15
   },
 
@@ -241,12 +241,12 @@ const styles = StyleSheet.create({
     width: 40,
     marginBottom: 5,
   },
-  imagectn1:{
+  imagectn1: {
     height: SIZES.h1 * 7,
     width: SIZES.h1 * 13,
     borderRadius: 25,
-    marginTop: SIZES.h5 -8,
-    
+    marginTop: SIZES.h5 - 8,
+
   },
   imagectn2: {
     height: SIZES.h1 * 2, width: SIZES.h1 * 3,

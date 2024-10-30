@@ -1,27 +1,29 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { COLORS, FONTS, icons, SIZES } from '../../../constants'
 import ArrowButton from '../../../components/Button/ArrowButton'
 import ArrowButton1 from '../../../components/Button/ArrowButton1'
 import SuccessButton from '../../../components/Button/SuccessButton'
+import { useNavigation } from '@react-navigation/native'
 
-const Successful = () => {
-  return (
-    <View style={styles.page}>
-    <ArrowButton1/>
-    <View style={{justifyContent: 'center',alignItems: 'center', marginTop: SIZES.h1}}>
-    <Image source={icons.check}
-      style={{ height: SIZES.h3 * 2.5, width: SIZES.h3 * 2.5}}
-      />
-      <Text style={{ ...FONTS.h4, textAlignVertical: 'center', marginTop: SIZES.h5}}>
-        Transaction Successful
-      </Text>
-    </View>
-     
-    <View style={styles.ctn}>
+const Successful = ({ onPress }) => {
+    const navigation = useNavigation();
+    return (
+        <View style={styles.page}>
+            <ArrowButton1 onPress={() => navigation.goBack()} />
+            <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: SIZES.h1 }}>
+                <Image source={icons.check}
+                    style={{ height: SIZES.h3 * 2.5, width: SIZES.h3 * 2.5 }}
+                />
+                <Text style={{ ...FONTS.h4, textAlignVertical: 'center', marginTop: SIZES.h5 }}>
+                    Transaction Successful
+                </Text>
+            </View>
+
+            <View style={styles.ctn}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ ...FONTS.h5, }}>
-                       Sender
+                        Sender
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
                         08076749945
@@ -33,7 +35,7 @@ const Successful = () => {
                         Network
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
-                       9Mobile
+                        9Mobile
                     </Text>
                 </View>
                 <View style={styles.line} />
@@ -48,7 +50,7 @@ const Successful = () => {
                 <View style={styles.line} />
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ ...FONTS.h5, }}>
-                     Calculated Amount
+                        Calculated Amount
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
                         #1,400.00
@@ -60,16 +62,16 @@ const Successful = () => {
                         Receiver
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
-                       08188404625
+                        08188404625
                     </Text>
                 </View>
                 <View style={styles.line}></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ ...FONTS.h5, }}>
-                       Bank
+                        Bank
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
-                       Access Bank Plc
+                        Access Bank Plc
                     </Text>
                 </View>
                 <View style={styles.line}></View>
@@ -78,16 +80,16 @@ const Successful = () => {
                         Transaction Status
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
-                      Successful
+                        Successful
                     </Text>
                 </View>
                 <View style={styles.line}></View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                     <Text style={{ ...FONTS.h5, }}>
-                      Transaction ID
+                        Transaction ID
                     </Text>
                     <Text style={{ ...FONTS.h5, }}>
-                       087665442622
+                        087665442622
                     </Text>
                 </View>
                 <View style={styles.line}></View>
@@ -100,9 +102,9 @@ const Successful = () => {
                     </Text>
                 </View>
             </View>
-            <SuccessButton/>
-    </View>
-  )
+            <SuccessButton onPress={() => navigation.navigate('HomeScreen')} />
+        </View>
+    )
 }
 
 export default Successful
