@@ -9,6 +9,8 @@ import HomeScreen from '../screens/Main/Home/HomeScreen';
 import CreditScreen from '../screens/Main/Wallet/CreditScreen';
 import CardScreen from '../screens/Main/Wallet/CardScreen';
 import Airtime from '../screens/Main/Airtime/Airtime';
+import Data from '../screens/Main/Data';
+
 
 const AppStack = () => {
   const Stack = createNativeStackNavigator();
@@ -23,7 +25,9 @@ const AppStack = () => {
       <Stack.Screen name="CardScreen" component={CardScreen} />
       <Stack.Screen name="TransferBalance" component={TransferBalance} />
 
+
       <Stack.Screen name="Airtime" component={Airtime} />
+      <Stack.Screen name="Data" component={Data} />
 
 
 
