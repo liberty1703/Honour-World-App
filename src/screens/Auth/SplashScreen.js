@@ -43,8 +43,8 @@ const SplashScreen = () => {
       />
       <Text style={{ ...FONTS.h1, textAlign: 'center', color: COLORS.white }}>HonourWorld</Text>
     </View>
-  )
-}
+  );
+};
 
 export default SplashScreen
 

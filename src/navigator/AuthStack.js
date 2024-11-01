@@ -6,8 +6,8 @@ import SignUp from '../screens/Auth/SignUp';
 import Verify from '../screens/Auth/Verify';
 import AccountCreated from '../screens/Auth/AccountCreated';
 import FingerPrintAuth from '../screens/Auth/FingerPrintAuth';
-import Confirmation from '../screens/Main/Confirmation/Confirmation';
-import Successful from '../screens/Main/Succesful/Successful';
+import Confirmation from '../screens/Auth/Confirmation/Confirmation';
+import Successful from '../screens/Auth/Succesful/Successful';
 import SplashScreen from '../screens/Auth/SplashScreen';
 import IntroSlider from '../screens/Auth/IntroSlider';
 

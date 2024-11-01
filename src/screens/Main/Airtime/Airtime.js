@@ -5,7 +5,7 @@ import ArrowButton1 from '../../../components/Button/ArrowButton1';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput } from 'react-native-paper';
 import ButtonInput from '../../../components/Button/ButtonInput';
-import Confirmation from '../Confirmation/Confirmation';
+import Confirmation from '../../Auth/Confirmation/Confirmation';
 
 
 const networkData = [
@@ -32,105 +32,106 @@ const Airtime = () => {
         text={'Airtime'}
         onPress={() => navigation.navigate("Main", { screen: "Bottom" })}
       />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-      >
-        <Text style={{ ...FONTS.h4, marginTop: SIZES.h1 }}>
-          Selected Network
+
+      <Text style={{ ...FONTS.h4, marginTop: SIZES.h1 }}>
+        Selected Network
+      </Text>
+
+      <View style={{ marginTop: SIZES.h4 }}>
+        <FlatList
+          data={networkData}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity style={styles.ctn}>
+                <Image
+                  source={item.image}
+                  style={styles.iconStyle}
+                />
+              </TouchableOpacity>
+            );
+          }}
+        />
+      </View>
+
+      {/* INPUT  */}
+      <View>
+        <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
+          Phone Number
         </Text>
-        <View style={{ marginTop: SIZES.h4 }}>
-          <FlatList
-            data={networkData}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => {
-              return (
-                <TouchableOpacity style={styles.ctn}>
-                  <Image
-                    source={item.image}
-                    style={styles.iconStyle}
-                  />
-                </TouchableOpacity>
-              );
-            }}
-          />
-        </View>
-
-        {/* INPUT  */}
-        <View>
-          <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
-            Phone Number
-          </Text>
-          <View style={styles.textinputstyl}>
-            <TextInput
-              placeholder='Enter Phone Number'
-              style={{ ...FONTS.h4, flex: 1, backgroundColor: COLORS.grey }}
-            />
-            <TouchableOpacity style={{ alignSelf: 'center' }}>
-              <Image
-                source={icons.contacts}
-                style={{ height: SIZES.h3 * 2, width: SIZES.h3 * 2 }}
-              />
-            </TouchableOpacity>
-          </View>
-          <View>
-          </View>
-        </View>
-        <View style={{ marginTop: SIZES.h3, flexDirection: 'row' }}>
-          <Image source={icons.caution}
-            style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }} />
-          <Text style={{ ...FONTS.body4, marginHorizontal: SIZES.h5 }}>
-            HonourWorld cannot be heldd responsible for numbers entered incorrectly.{"\n"}
-            Please double check the phone number you've entered before Airtime Top-up.
-          </Text>
-        </View>
-        <View style={{ marginTop: SIZES.h4, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <Text style={{ ...FONTS.h4 }}>
-            Enter Recharge Amount
-          </Text>
-          <Text style={{ ...FONTS.body5 }}>
-            Balance: N2,500.00
-          </Text>
-        </View>
-        <View>
-          <FlatList
-            data={AmountData}
-            // horizontal={true}
-            numColumns={3}
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={({ item }) => {
-              return (
-                <TouchableOpacity style={styles.ctnn}>
-                  <Text style={{ ...FONTS.h4 }} >
-                    {item.text}
-                  </Text>
-                </TouchableOpacity>
-              )
-
-            }}
-          />
-        </View>
-        <View style={styles.textinputstyl1}>
+        <View style={styles.textinputstyl}>
           <TextInput
-            placeholder='Enter Recharge Amount'
+            placeholder='Enter Phone Number'
             style={{ ...FONTS.h4, flex: 1, backgroundColor: COLORS.grey }}
           />
+          <TouchableOpacity style={{ alignSelf: 'center' }}>
+            <Image
+              source={icons.contacts}
+              style={{ height: SIZES.h3 * 2, width: SIZES.h3 * 2 }}
+            />
+          </TouchableOpacity>
         </View>
-        < View style={styles.benctn}>
-          <Text style={{ ...FONTS.h4, textAlignVertical: 'center' }}>Save as beneficiary</Text>
+        <View>
         </View>
-        <View style={{ marginBottom: SIZES.h3 }}>
+      </View>
 
-          {/* PAYMENT BUTTON */}
-          <ButtonInput
-            text={'Make Payment'}
-            onPress={() => // For nested navigation
-              navigation.navigate('Auth', { screen: 'Confirmation' })} />
-        </View>
+      <View style={{ marginTop: SIZES.h3, flexDirection: 'row' }}>
+        <Image source={icons.caution}
+          style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }} />
+        <Text style={{ ...FONTS.body4, marginHorizontal: SIZES.h5 }}>
+          HonourWorld cannot be heldd responsible for numbers entered incorrectly.{"\n"}
+          Please double check the phone number you've entered before Airtime Top-up.
+        </Text>
+      </View>
 
-      </ScrollView>
+      <View style={{ marginTop: SIZES.h4, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <Text style={{ ...FONTS.h4 }}>
+          Enter Recharge Amount
+        </Text>
+        <Text style={{ ...FONTS.body5 }}>
+          Balance: N2,500.00
+        </Text>
+      </View>
+
+      <View>
+        <FlatList
+          data={AmountData}
+          numColumns={3}
+          showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => {
+            return (
+              <TouchableOpacity style={styles.ctnn}>
+                <Text style={{ ...FONTS.h4 }} >
+                  {item.text}
+                </Text>
+              </TouchableOpacity>
+            )
+
+          }}
+        />
+      </View>
+      <View style={styles.textinputstyl1}>
+        <TextInput
+          placeholder='Enter Recharge Amount'
+          style={{ ...FONTS.h4, flex: 1, backgroundColor: COLORS.grey }}
+        />
+      </View>
+
+      <View style={styles.benctn}>
+        <Text style={{ ...FONTS.h4, textAlignVertical: 'center' }}>Save as beneficiary</Text>
+      </View>
+      <View style={{ marginBottom: SIZES.h1 }}>
+        {/* PAYMENT BUTTON */}
+        <ButtonInput
+          text={'Make Payment'}
+          onPress={() => // For nested navigation
+            navigation.navigate('Auth', { screen: 'Confirmation' })} />
+      </View>
+
+
     </View>
   );
 };
