@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { SIZES, COLORS, icons, images } from '../../constants'
+import { SIZES, COLORS, icons, images } from '../../../constants'
 
 const Data = () => {
     const navigation = useNavigation();
@@ -20,5 +20,5 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.grey,
         flex: 1,
         padding: SIZES.h2,
-    }
+    },
 });

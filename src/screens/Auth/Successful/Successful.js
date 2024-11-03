@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
 import { COLORS, FONTS, icons, SIZES } from '../../../constants'
-import ArrowButton from '../../../components/Button/ArrowButton'
 import ArrowButton1 from '../../../components/Button/ArrowButton1'
 import SuccessButton from '../../../components/Button/SuccessButton'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native';
+
+
 
 const Successful = ({ onPress }) => {
     const navigation = useNavigation();
