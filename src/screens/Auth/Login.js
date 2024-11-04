@@ -7,11 +7,20 @@ import ButtonInput from '../../components/Button/ButtonInput';
 import QuestionForm from '../../components/Complaints/QuestionForm';
 import SignUp from './SignUp';
 import LogoButton from '../../components/Button/LogoButton';
-import { Screen } from 'react-native-screens';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Toast from 'react-native-toast-message';
 
 const Login = () => {
     const navigation = useNavigation();
+
+    // const showToast = () => {
+    //     Toast.show({
+    //         type: 'success',
+    //         text1: 'Hello',
+    //         text2: 'This is some something 👋'
+    //     });
+    // };
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -24,7 +33,9 @@ const Login = () => {
                 if (userDatas.email === email && userDatas.password === password) {
                     console.log('Login details', userData)
                     console.log('Login Succesful')
+                    Toast.show('Login Succesful', 'success')
                     Alert.alert('Success', 'Login Succesful');
+
                     navigation.replace('Main', { screen: "Bottom" });
                 }
             }
@@ -37,6 +48,8 @@ const Login = () => {
     };
     return (
         <View style={styles.page}>
+
+            {/* <Toast /> */}
 
             {/* <LogoButton images={images.logo}/> */}
 
@@ -68,7 +81,7 @@ const Login = () => {
                     <Image source={icons.box} style={{ height: SIZES.h3, width: SIZES.h3 }} />
                 </TouchableOpacity>
                 <Text style={{ ...FONTS.body3a }}> Remember Password</Text>
-                <TouchableOpacity style={{ marginLeft: 'auto' }}>
+                <TouchableOpacity onPress={Toast.show('success', '')} style={{ marginLeft: 'auto' }}>
                     <Text style={{ ...FONTS.h4, color: COLORS.primary }}> Forgot Password?</Text>
                 </TouchableOpacity>
             </View>
@@ -82,15 +95,15 @@ const Login = () => {
 
             <Text style={{ ...FONTS.body3, marginTop: 20, textAlign: 'center', textAlignVertical: 'center' }}> Login with fingerprint</Text>
             <TouchableOpacity>
-                <Image source={icons.fingerprint} style={{ height: SIZES.h1 * 2.5, width: SIZES.h1 * 2.5, alignSelf: 'center', marginTop: 15 }} />
+                <Image source={icons.fingerprint} style={{ height: SIZES.h2 * 2.5, width: SIZES.h2 * 2.5, alignSelf: 'center', marginTop: 15 }} />
             </TouchableOpacity>
 
             <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
-                <Text style={{ ...FONTS.body3, textAlign: 'center', textAlignVertical: 'center' }}>
+                <Text style={{ ...FONTS.body3, textAlign: 'center', textAlignVertical: 'center', marginTop: SIZES.h4 }}>
                     Don't have an account? -
                 </Text>
                 <TouchableOpacity onPress={() => navigation.navigate(SignUp)}>
-                    <Text style={{ textDecorationLine: 'underline', ...FONTS.h3, color: COLORS.primary, textAlign: 'center', textAlignVertical: 'center' }}>
+                    <Text style={{ textDecorationLine: 'underline', ...FONTS.h3, color: COLORS.primary, textAlign: 'center', textAlignVertical: 'center', marginTop: SIZES.h4 }}>
                         Sign Up
                     </Text>
                 </TouchableOpacity>
