@@ -25,8 +25,6 @@ const AppStack = () => {
       <Stack.Screen name="WalletScreen" component={WalletScreen} />
       <Stack.Screen name="CardScreen" component={CardScreen} />
       <Stack.Screen name="TransferBalance" component={TransferBalance} />
-      <Stack.Screen name="Successful" component={Successful} />
-
 
       <Stack.Screen name="Airtime" component={Airtime} />
       <Stack.Screen name="Data" component={Data} />

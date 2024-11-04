@@ -10,14 +10,26 @@ const SplashScreen = () => {
 
   const cool = async () => {
     try {
-      const jsonValue = await AsyncStorage.getItem('open')
+      const jsonValue = await AsyncStorage.getItem('hasOpened')
       if (!jsonValue) {
         console.log('First time logging in'); //first time opening the app
-        navigation.replace('IntroSlider');
+
+        // set that it has now been opened
+
+        await AsyncStorage.setItem('hasOpened', 'true'); //App has opened before
+
+        //navigate to intro slider
+
+        navigation.replace('IntroSlider')
+
       } else {
-        await AsyncStorage.setItem('open', jsonValue); //App has opened before
-        console.log('Openend before')
-        navigation.replace('Login'); //login
+
+        // app has been opened before/
+
+        console.log('Openend before');
+        // navigate to login
+
+        navigation.replace('Login');
       }
     }
     catch (error) {

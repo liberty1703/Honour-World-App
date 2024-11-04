@@ -7,8 +7,9 @@ const Data = () => {
     const navigation = useNavigation();
     return (
         <View styles={styles.page}>
-
-            <Text style={{ fontSize: SIZES.h4 }}>Data</Text>
+            <View>
+                <Text style={{ fontSize: SIZES.h4 }}>Data</Text>
+            </View>
         </View>
     )
 }

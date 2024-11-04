@@ -32,7 +32,7 @@ const Login = () => {
                 Alert.alert('Error', 'Invalid error or password');
             }
         } catch (error) {
-            console.log('error fetching data', error)
+            console.log('error fetching data', error);
         }
     };
     return (
@@ -60,7 +60,6 @@ const Login = () => {
                 value={password}
                 onChangeText={text => setPassword(text)}
                 secureTextEntry
-
             />
 
 
