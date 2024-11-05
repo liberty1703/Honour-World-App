@@ -30,12 +30,14 @@ const IntroSlider = () => {
   const navigation = useNavigation();
   const sliderRef = useRef(null)
 
+
+
   const handleNext = async () => {
     try {
       const asyncData = { open: true }
 
       const jsonValue = JSON.stringify(asyncData)
-      await AsyncStorage.setItem('open', jsonValue)
+      await AsyncStorage.setItem('hasCompletedIntro', jsonValue)
       console.log('saved')
       navigation.replace("SignUp")
     } catch (error) {

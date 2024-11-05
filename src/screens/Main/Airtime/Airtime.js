@@ -26,8 +26,9 @@ const AmountData = [
 const Airtime = () => {
   const navigation = useNavigation();
 
-  return (
-    <View style={styles.page}>
+  const RenderHeader = () => {
+    <View >
+
       <ArrowButton1
         text={'Airtime'}
         onPress={() => navigation.navigate("Main", { screen: "Bottom" })}
@@ -131,7 +132,16 @@ const Airtime = () => {
             navigation.navigate('Auth', { screen: 'Confirmation' })} />
       </View>
 
+    </View>
+  }
 
+  return (
+    <View style={{ flex: 1 }}>
+      <FlatList
+        ListHeaderComponent={RenderHeader}
+        // AAAZ? ?data={['W']}
+        data={['']}
+      />
     </View>
   );
 };
