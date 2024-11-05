@@ -29,8 +29,7 @@ const Airtime = () => {
   const RenderHeader = () => {
     return (
 
-
-      <View >
+      <View style={{ paddingHorizontal: SIZES.h3, paddingTop: SIZES.h3 }} >
 
         <ArrowButton1
           text={'Airtime'}
