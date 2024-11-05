@@ -47,6 +47,7 @@ const HomeScreen = () => {
   return (
     <View style={styles.page}>
 
+
       <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Image */}
         <TouchableOpacity>

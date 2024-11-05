@@ -33,7 +33,12 @@ const Login = () => {
                 if (userDatas.email === email && userDatas.password === password) {
                     console.log('Login details', userData)
                     console.log('Login Succesful')
-                    Toast.show('Login Succesful', 'success')
+                    Toast.show({
+                        type: 'success',
+                        text1: 'Successful',
+                        text2: 'Note Successfully added',
+                        position: 'bottom',
+                    })
                     Alert.alert('Success', 'Login Succesful');
 
                     navigation.replace('Main', { screen: "Bottom" });
@@ -49,7 +54,7 @@ const Login = () => {
     return (
         <View style={styles.page}>
 
-            {/* <Toast /> */}
+
 
             {/* <LogoButton images={images.logo}/> */}
 
@@ -109,6 +114,7 @@ const Login = () => {
                 </TouchableOpacity>
             </View>
             <QuestionForm />
+            <Toast />
         </View>
 
     )
