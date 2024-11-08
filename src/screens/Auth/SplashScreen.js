@@ -13,6 +13,8 @@ const SplashScreen = () => {
     try {
 
       const completedIntro = await AsyncStorage.getItem('hasCompletedIntro')
+
+
       if (!completedIntro) {
         console.log('First time logging in'); //first time opening the app
 
@@ -26,17 +28,21 @@ const SplashScreen = () => {
 
         // app has been opened before, check if intro was completed
         const introCompleted = await AsyncStorage.getItem('hasCompletedIntro');
-        if (introCompleted === 'true') {
+        let kkk = JSON.parse(introCompleted)
+
+        console.log('...............', introCompleted)
+
+        if (kkk?.open === true) {
 
           //user has completed intro, going to main screen
           console.log('Openend before');
           console.log('Going to main screen');
-          navigation.replace('HomeScreen')
+          navigation.replace('Main', { screen: "Bottom" })
         }
         else {
           // navigate to login
           console.log('Intro not completed');
-          navigation.replace('Login');
+          navigation.replace('IntroSlider');
         }
       }
     }
@@ -61,6 +67,7 @@ const SplashScreen = () => {
 
   useEffect(() => {
     checkStatus();
+
   });
 
 
@@ -74,12 +81,11 @@ const SplashScreen = () => {
       />
 
       <Text style={{ ...FONTS.h1, textAlign: 'center', color: COLORS.white }}>HonourWorld</Text>
-      {/* {isFirstTime && <ActivityIndicator size="large" color={COLORS.white} />} */}
     </View>
   );
 };
 
-export default SplashScreen
+export default SplashScreen;
 
 const styles = StyleSheet.create({
   page: {
