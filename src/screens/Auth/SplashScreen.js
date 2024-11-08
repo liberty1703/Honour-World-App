@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { COLORS, FONTS } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { ActivityIndicator } from 'react-native-paper'
 
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -16,11 +17,9 @@ const SplashScreen = () => {
         console.log('First time logging in'); //first time opening the app
 
         // set that it has now been opened
-
         await AsyncStorage.setItem('hasCompletedIntro', 'false'); //App has opened before
 
         //navigate to intro slider for first time setup
-
         navigation.replace('IntroSlider');
 
       } else {
@@ -30,23 +29,24 @@ const SplashScreen = () => {
         if (introCompleted === 'true') {
 
           //user has completed intro, going to main screen
+          console.log('Openend before');
           console.log('Going to main screen');
           navigation.replace('HomeScreen')
         }
-
-        console.log('Openend before');
-        // navigate to login
-
-        navigation.replace('Login');
+        else {
+          // navigate to login
+          console.log('Intro not completed');
+          navigation.replace('Login');
+        }
       }
     }
     catch (error) {
       console.log('Error saving item', error)
-      navigation.replace('Login');
+      navigation.replace('SignUp');
 
     }
     finally {
-
+      setIsLoading(false);
     }
 
     const finishIntro = async () => {
@@ -61,15 +61,13 @@ const SplashScreen = () => {
 
   useEffect(() => {
     checkStatus();
-  },)
+  });
 
-  // useEffect(() => {
-  //   getAsync()
-  //   // return () => clearTimeout(timer) // Clear the timer when the component unmounts to prevent memory leaks
-  // }, [])
+
 
   return (
     <View style={styles.page}>
+      {isLoading && <ActivityIndicator size="large" />}
       <StatusBar
         backgroundColor={COLORS.primary}
         barStyle={'light-content'}
