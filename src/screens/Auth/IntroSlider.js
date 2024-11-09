@@ -34,7 +34,7 @@ const IntroSlider = () => {
 
   const handleNext = async () => {
     try {
-      const asyncData = { open: true }
+      const asyncData = { open: true };
 
       const jsonValue = JSON.stringify(asyncData)
       await AsyncStorage.setItem('hasCompletedIntro', jsonValue)
@@ -43,7 +43,7 @@ const IntroSlider = () => {
     } catch (error) {
       console.log('error while saving', error)
     }
-  }
+  };
 
   const renderItem = ({ item }) => {
     return (
