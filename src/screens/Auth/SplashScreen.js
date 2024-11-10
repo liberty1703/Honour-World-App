@@ -14,7 +14,6 @@ const SplashScreen = () => {
 
       const completedIntro = await AsyncStorage.getItem('hasCompletedIntro')
 
-
       if (!completedIntro) {
         console.log('First time logging in'); //first time opening the app
 
@@ -28,9 +27,9 @@ const SplashScreen = () => {
 
         // app has been opened before, check if intro was completed
         const introCompleted = await AsyncStorage.getItem('hasCompletedIntro');
-        let kkk = JSON.parse(introCompleted)
+        let kkk = JSON.parse(introCompleted);
 
-        console.log('...............', introCompleted)
+        console.log('...............', introCompleted);
 
         if (kkk?.open === true) {
 

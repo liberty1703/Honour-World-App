@@ -31,6 +31,7 @@ const transactionsData = [
 
 
 const HomeScreen = () => {
+
   const navigation = useNavigation();
   const handlePress = (id) => {
     if (id === 1) {
@@ -44,146 +45,158 @@ const HomeScreen = () => {
     }
   };
 
-  return (
-    <View style={styles.page}>
+
+  const RenderHeader = () => {
+
+    return (
+
+      <View style={styles.page}>
 
 
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
-        {/* Image */}
-        <TouchableOpacity>
-          <Image style={styles.imagectn} source={images.men}
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          {/* Image */}
+          <TouchableOpacity>
+            <Image style={styles.imagectn} source={images.men}
 
-          />
-        </TouchableOpacity>
+            />
+          </TouchableOpacity>
 
-        {/* Text Container */}
-        <View style={{ flexDirection: 'column', marginLeft: 10 }}>
-          <Text style={{ ...FONTS.h2 }}>
-            Hi, Spring
-          </Text>
-          <Text style={{ ...FONTS.body4 }}>
-            What bill would you like to pay today?
-          </Text>
+          {/* Text Container */}
+          <View style={{ flexDirection: 'column', marginLeft: 10 }}>
+            <Text style={{ ...FONTS.h2 }}>
+              Hi, Spring
+            </Text>
+            <Text style={{ ...FONTS.body4 }}>
+              What bill would you like to pay today?
+            </Text>
+          </View>
+
+          {/* Notification Icon */}
+          <TouchableOpacity style={{ marginLeft: 'auto' }}>
+            <Image
+              source={icons.notification}
+              style={{ height: SIZES.h1, width: SIZES.h1 }}
+            />
+          </TouchableOpacity>
         </View>
 
-        {/* Notification Icon */}
-        <TouchableOpacity style={{ marginLeft: 'auto' }}>
-          <Image
-            source={icons.notification}
-            style={{ height: SIZES.h1, width: SIZES.h1 }}
-          />
-        </TouchableOpacity>
-      </View>
+        {/* {BALANCE BANNER} */}
+        <View style={styles.Balancectn}>
+          <View style={{ paddingVertical: SIZES.h1 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 
-      {/* {BALANCE BANNER} */}
-      <View style={styles.Balancectn}>
-        <View style={{ paddingVertical: SIZES.h1 }}>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+              {/* Wallet Balance */}
+              <Text style={{ ...FONTS.body2a - 2, color: COLORS.background }}>
+                Wallet Balance
+              </Text>
 
-            {/* Wallet Balance */}
-            <Text style={{ ...FONTS.body2a - 2, color: COLORS.background }}>
-              Wallet Balance
-            </Text>
-
-            {/* ID and Copy Icon */}
+              {/* ID and Copy Icon */}
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Text style={{ ...FONTS.body2a - 1, color: COLORS.background, marginRight: 5 }}>
+                  ID: 7679945
+                </Text>
+                <TouchableOpacity>
+                  <Image
+                    source={icons.copy}
+                    style={{ height: 18, width: 18, tintColor: COLORS.background }}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Text style={{ ...FONTS.body2a - 1, color: COLORS.background, marginRight: 5 }}>
-                ID: 7679945
+              <Text style={{ ...FONTS.h1, color: COLORS.background }}>
+                N5,400.00
               </Text>
               <TouchableOpacity>
-                <Image
-                  source={icons.copy}
-                  style={{ height: 18, width: 18, tintColor: COLORS.background }}
-                />
+                <Image source={icons.eye} style={{ height: SIZES.h1 * 0.9, width: SIZES.h1 * 1, tintColor: COLORS.background, marginLeft: SIZES.h5 * 0.8 }} />
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Text style={{ ...FONTS.h1, color: COLORS.background }}>
-              N5,400.00
-            </Text>
-            <TouchableOpacity>
-              <Image source={icons.eye} style={{ height: SIZES.h1 * 0.9, width: SIZES.h1 * 1, tintColor: COLORS.background, marginLeft: SIZES.h5 * 0.8 }} />
+          <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity style={[styles.smallctn, { paddingHorizontal: 10 }, { alignItems: 'center' }]}>
+              <Image source={icons.cash} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
+              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={() => navigation.navigate(TransferBalance)}>
+              <Image source={icons.transfer} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
+              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Transfer Balance</Text>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={{ flexDirection: 'row' }}>
-          <TouchableOpacity style={[styles.smallctn, { paddingHorizontal: 10 }, { alignItems: 'center' }]}>
-            <Image source={icons.cash} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
-            <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={() => navigation.navigate(TransferBalance)}>
-            <Image source={icons.transfer} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
-            <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Transfer Balance</Text>
+        <Text style={{ ...FONTS.h3, marginTop: SIZES.h4 }}>
+          Quick Actions
+        </Text>
+        <View>
+          <FlatList
+            data={ActionsData}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id.toString()}
+            renderItem={({ item }) => {
+              return (
+                <TouchableOpacity style={styles.ctn} onPress={() => handlePress(item.id)}>
+                  <Image source={item.image}
+                    style={styles.iconStyle}
+                  />
+                  <Text style={{ ...FONTS.body5 }}>
+                    {item.subtitle}
+                  </Text>
+                </TouchableOpacity>
+              )
+            }}
+          />
+        </View>
+        <Image source={images.buydata}
+          style={styles.imagectn1} />
+
+        <View style={{ flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
+          <Text style={{ ...FONTS.body3, }}>
+            Recent Transcation
+          </Text>
+          <TouchableOpacity>
+            <Text style={{ ...FONTS.body3, textDecorationLine: 'underline', color: COLORS.green }}>
+              Sell all
+            </Text>
           </TouchableOpacity>
         </View>
-      </View>
-      <Text style={{ ...FONTS.h3, marginTop: SIZES.h4 }}>
-        Quick Actions
-      </Text>
-      <View>
         <FlatList
-          data={ActionsData}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id.toString()}
+          data={transactionsData}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
           renderItem={({ item }) => {
             return (
-              <TouchableOpacity style={styles.ctn} onPress={() => handlePress(item.id)}>
-                <Image source={item.image}
-                  style={styles.iconStyle}
-                />
-                <Text style={{ ...FONTS.body5 }}>
-                  {item.subtitle}
-                </Text>
-              </TouchableOpacity>
-            )
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+                {/* Image */}
+                <View>
+                  <Image style={styles.imagectn2} source={icons.mtn} />
+                </View>
+
+                {/* Text Container */}
+                <View style={{ flexDirection: 'column', flex: 1 }}>
+                  {/* Title and Amount Row */}
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                    <Text style={{ ...FONTS.h3 }}>{item.title}</Text>
+                    <Text style={{ ...FONTS.h3 }}>{item.amount}</Text>
+                  </View>
+
+                  {/* Date and Status Row */}
+                  <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
+                    <Text style={{ ...FONTS.body4 }}>{item.date}</Text>
+                    <Text style={{ ...FONTS.body4, color: COLORS.green }}>{item.status}</Text>
+                  </View>
+                </View>
+              </View>
+            );
           }}
         />
       </View>
-      <Image source={images.buydata}
-        style={styles.imagectn1} />
+    )
+  }
 
-      <View style={{ flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
-        <Text style={{ ...FONTS.body3, }}>
-          Recent Transcation
-        </Text>
-        <TouchableOpacity>
-          <Text style={{ ...FONTS.body3, textDecorationLine: 'underline', color: COLORS.green }}>
-            Sell all
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <FlatList
-        data={transactionsData}
-        keyExtractor={(item) => item.id}
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => {
-          return (
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              {/* Image */}
-              <View>
-                <Image style={styles.imagectn2} source={icons.mtn} />
-              </View>
-
-              {/* Text Container */}
-              <View style={{ flexDirection: 'column', flex: 1 }}>
-                {/* Title and Amount Row */}
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                  <Text style={{ ...FONTS.h3 }}>{item.title}</Text>
-                  <Text style={{ ...FONTS.h3 }}>{item.amount}</Text>
-                </View>
-
-                {/* Date and Status Row */}
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                  <Text style={{ ...FONTS.body4 }}>{item.date}</Text>
-                  <Text style={{ ...FONTS.body4, color: COLORS.green }}>{item.status}</Text>
-                </View>
-              </View>
-            </View>
-          );
-        }}
-      />
+  return (
+    <View>
+      <FlatList renderItem={RenderHeader}
+        data={['']} />
     </View>
   )
 }

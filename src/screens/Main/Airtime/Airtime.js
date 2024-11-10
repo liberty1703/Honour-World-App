@@ -142,7 +142,6 @@ const Airtime = () => {
     <View style={{ flex: 1 }}>
       <FlatList
         ListHeaderComponent={RenderHeader}
-        // AAAZ? ?data={['W']}
         data={['']}
       />
     </View>
