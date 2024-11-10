@@ -2,13 +2,16 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SIZES, COLORS, icons, images } from '../../../constants'
+import ArrowButton2 from '../../../components/Button/ArrowButon2'
+import ArrowButton1 from '../../../components/Button/ArrowButton1'
 
 const Data = () => {
     const navigation = useNavigation();
     return (
         <View styles={styles.page}>
+            <ArrowButton1 text={'Data'} onPress={() => navigation.goBack()} />
             <View>
-                <Text style={{ fontSize: SIZES.h4 }}>Data</Text>
+                <Text style={{ fontSize: SIZES.h4 }}>This</Text>
             </View>
         </View>
     )
@@ -20,7 +23,7 @@ const styles = StyleSheet.create({
     page: {
         backgroundColor: COLORS.grey,
         flex: 1,
-        padding: SIZES.h2,
+        paddingHorizontal: SIZES.h3, paddingTop: SIZES.h3
     },
 
 });
