@@ -75,8 +75,7 @@ const Airtime = () => {
               />
             </TouchableOpacity>
           </View>
-          <View>
-          </View>
+
         </View>
 
         <View style={{ marginTop: SIZES.h3, flexDirection: 'row' }}>

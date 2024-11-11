@@ -9,7 +9,7 @@ const ArrowButton1 = ({ text, onPress }) => {
     <View style={{ flexDirection: 'row', }}>
       <TouchableOpacity onPress={onPress} style={{ flexDirection: 'row', paddingHorizontal: 10, alignItems: 'center' }}>
         <Image source={icons.arrow} style={{ height: SIZES.body4, width: SIZES.body4 }} />
-        <Text style={{ ...FONTS.body3, marginLeft: 10 }}>
+        <Text style={{ ...FONTS.body3, marginLeft: 15 }}>
           Back
         </Text>
       </TouchableOpacity>
