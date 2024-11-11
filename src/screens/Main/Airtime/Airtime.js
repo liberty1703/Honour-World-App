@@ -7,7 +7,6 @@ import { TextInput } from 'react-native-paper';
 import ButtonInput from '../../../components/Button/ButtonInput';
 import Confirmation from '../../Auth/Confirmation/Confirmation';
 
-
 const networkData = [
   { id: 1, image: icons.airtel },
   { id: 2, image: icons.mtn },

@@ -42,7 +42,7 @@ const circlered = require('../assets/icons/circlered.png');
 const boxarrrow = require('../assets/icons/boxarrrow.png');
 const monniepoint = require('../assets/icons/monniepoint.png');
 const card = require('../assets/icons/card.png');
-const droparrow = require('../assets/icons/droparrow.png');
+const droparrow = require('../assets/icons/dropdown.png');
 export default {
     arrow,
     box,
