@@ -14,10 +14,10 @@ const BottomStack = () => {
     <Tab.Navigator screenOptions={{ headerShown: false, }}>
       <Tab.Screen name='Home' component={HomeScreen}
         options={{
-          tabBarIcon: ({ COLORS, SIZES, focused }) => {
+          tabBarIcon: ({ COLORS, focused }) => {
             return (
               <Image source={icons.home}
-                style={{ height: 20, width: 20 }}
+                style={{ height: SIZES.h2, width: SIZES.h2, }}
               />
             )
           }
@@ -25,10 +25,10 @@ const BottomStack = () => {
       />
       <Tab.Screen name='Service' component={ServiceScreen}
         options={{
-          tabBarIcon: ({ COLORS, SIZES, focused }) => {
+          tabBarIcon: ({ COLORS, focused }) => {
             return (
-              <Image source={icons.service}
-                style={{ height: 20, width: 20 }}
+              <Image source={icons.service2}
+                style={{ height: SIZES.h2, width: SIZES.h2 }}
               />
             )
           }
@@ -36,10 +36,10 @@ const BottomStack = () => {
       />
       <Tab.Screen name='Wallet' component={WalletScreen}
         options={{
-          tabBarIcon: ({ COLORS, SIZES, focused }) => {
+          tabBarIcon: ({ COLORS, focused }) => {
             return (
               <Image source={icons.wallet}
-                style={{ height: 20, width: 20 }}
+                style={{ height: SIZES.h2, width: SIZES.h2 }}
               />
             )
           }
@@ -58,8 +58,8 @@ const BottomStack = () => {
       />
     </Tab.Navigator>
   )
-}
+};
 
-export default BottomStack
+export default BottomStack;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});
