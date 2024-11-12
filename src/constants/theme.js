@@ -1,24 +1,32 @@
 import { Dimensions } from 'react-native';
+// import themes from '../../assets/themes'
 const { width, height } = Dimensions.get('window');
 
 const screenWidth = Math.round(Dimensions.get('window').width);
 const screenHeight = Math.round(Dimensions.get('window').height);
 
-
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export const COLORS = {
-    white: "#ffffff",
+    white: '#ffffff',
+    offwhite: '#F3F3F3',
     black: "#000000",
-    red: "red",
-    green: '#60D669',
-    primary: "#2F75FD",
-    background: "#FFFFFF",
-    linear: "#CDE1FF",
-    offwhite: "#FAF9F6",
-    grey: "#F8FCFF",
-
+    primary: "#272662",
+    primary2: "#2F75FD",
+    // secondary: "#063A4F",
+    sky: "#F1FAF9",
+    orange: "#ff7040",
+    secondary: "#00caf2",
+    green: "#47cc49",
+    green2: "#038654",
+    gray: '#EFF2F7',
+    chocolate: '#5d5c6c',
+    chocolateBackground: '#CECFCD',
+    grey2: '#f6f5fa',
+    grey3: '#efefef',
+    gray4: '#B4B5B5',
+    red: 'red',
 };
 
 export const SIZES = {
@@ -32,7 +40,7 @@ export const SIZES = {
     navTitle: screenHeight * 0.04375,
     h1: screenHeight * 0.0375,
     h2: screenHeight * 0.0275,
-    h2a: screenHeight * 0.0340,
+    h2a: screenHeight * 0.034,
     h2c: screenHeight * 0.0245,
     h3: screenHeight * 0.0225,
     h3a: screenHeight * 0.0235,
@@ -45,7 +53,7 @@ export const SIZES = {
     body3b: screenHeight * 0.022,
     body4: screenHeight * 0.0175,
     body5: screenHeight * 0.015,
-    body6: screenHeight * 0.012,
+    body6: screenHeight * 0.01,
     intro: screenHeight * 0.04,
 
     // app dimensions
@@ -54,123 +62,140 @@ export const SIZES = {
 };
 
 export const FONTS = {
-    navTitle: { fontFamily: 'GeneralSans-Regular', fontSize: SIZES.navTitle },
+    navTitle: {
+        fontFamily: 'Satoshi-Bold', fontSize: SIZES.navTitle,
+        color: "#000000",
+    },
     largeTitleBold: {
-        fontFamily: 'GeneralSans-Regular',
-        fontSize: SIZES.h1 * 1.5,
+        fontFamily: 'Satoshi-Bold',
+        fontSize: SIZES.h1 * 1.1,
         lineHeight: screenHeight * 0.05,
-        color: COLORS.black,
+        color: "#000000",
     },
     h1: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h1,
         lineHeight: screenHeight * 0.05,
-        color: COLORS.black,
+        color: "#000000",
+    },
+    h1a: {
+        fontFamily: 'Satoshi-Bold',
+        fontSize: SIZES.h1 * 0.9,
+        lineHeight: screenHeight * 0.05,
+        color: "#000000",
     },
     h2: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h2,
         lineHeight: screenHeight * 0.0375,
-        color: COLORS.black,
+        color: "#000000",
     },
     h3: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h3,
         lineHeight: screenHeight * 0.025,
-        color: COLORS.black,
+        color: "#000000",
     },
     h3a: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h3a,
         lineHeight: screenHeight * 0.025,
-        color: COLORS.black,
+        color: "#000000",
     },
     h4: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h4,
         lineHeight: screenHeight * 0.025,
-        color: COLORS.black,
+        color: "#000000",
     },
     h5: {
-        fontFamily: 'GeneralSans-Bold',
+        fontFamily: 'Satoshi-Bold',
         fontSize: SIZES.h5,
         lineHeight: screenHeight * 0.025,
-        color: COLORS.black,
+        color: "#000000",
     },
-    // BODY
     body: {
-        fontFamily: 'GeneralSans-Medium',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body1 * 1.2,
         lineHeight: 39,
-        color: COLORS.black,
+        color: "#000000",
     },
     body1: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body1,
         lineHeight: 36,
-        color: COLORS.black,
-    },
-    body1a: {
-        fontFamily: 'GeneralSans-Regular',
-        fontSize: SIZES.body1 * 0.9,
-        lineHeight: 30,
-        color: COLORS.black,
+        color: "#000000",
     },
     body2: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body2,
         lineHeight: 30,
-        color: COLORS.black,
+        color: "#000000",
     },
     body2a: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body2 * 0.95,
         lineHeight: 30,
-        color: COLORS.black,
-    }, body2b: {
-        fontFamily: 'GeneralSans-Regular',
+        color: "#000000",
+    },
+    body2b: {
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body2 * 0.935,
         lineHeight: 30,
-        color: COLORS.black,
-    }, body2c: {
-        fontFamily: 'GeneralSans-Regular',
+        color: "#000000",
+    },
+    body2c: {
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body2 * 1.3,
         lineHeight: 30,
-        color: COLORS.black,
+        color: "#000000",
     },
     body3: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body3 * 1.05,
-        lineHeight: 18,
-        color: COLORS.black,
-    }, body3a: {
-        fontFamily: 'GeneralSans-Regular',
+        lineHeight: 22,
+        color: "#000000",
+    },
+    body3a: {
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body3a,
-        lineHeight: 18,
-        color: COLORS.black,
-    }, body3b: {
-        fontFamily: 'GeneralSans-Regular',
+        lineHeight: 22,
+        color: "#000000",
+    },
+    body3b: {
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body3b,
-        lineHeight: 18,
-        color: COLORS.black,
+        lineHeight: 22,
+        color: "#000000",
+    }, body3c: {
+        fontFamily: 'Satoshi-Regular',
+        fontSize: SIZES.body3a * 0.88,
+        lineHeight: 22,
+        color: "#000000",
     },
     body4: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body4,
-        lineHeight: 18,
-        color: COLORS.black,
+        lineHeight: 22,
+        color: "#000000",
+    },
+    body4b: {
+        fontFamily: 'Satoshi-Regular',
+        fontSize: SIZES.body4 * 0.9,
+        lineHeight: 22,
+        color: "#000000",
     },
     body5: {
-        fontFamily: 'GeneralSans-Regular',
+        fontFamily: 'Satoshi-Regular',
         fontSize: SIZES.body5,
-        lineHeight: 18,
-        color: COLORS.black,
+        lineHeight: 22,
+        color: "#000000",
     },
     body6: {
-        fontFamily: 'GeneralSans-Regular',
-        fontSize: SIZES.body6 * 1.2,
-        lineHeight: 18,
-        color: COLORS.black,
+        fontFamily: 'Satoshi-Regular',
+        fontSize: SIZES.body6,
+        lineHeight: 22,
+        color: "#000000",
     },
 };
 

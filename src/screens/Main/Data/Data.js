@@ -8,7 +8,7 @@ const Data = () => {
     return (
         <View style={styles.page}>
             <ArrowButton1 text={'Data'} onPress={() => navigation.goBack()} />
-            <View style={{ paddingHorizontal: SIZES.h3, backgroundColor: COLORS.grey }}>
+            <View style={{ paddingHorizontal: SIZES.h3, backgroundColor: COLORS.grey2 }}>
                 <Text style={{ ...FONTS.h4, marginTop: SIZES.h1 }}>
                     Selected Network
                 </Text>
@@ -32,6 +32,27 @@ const Data = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
+
+
+                <View>
+                    <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
+                        Phone Number
+                    </Text>
+                    <View style={styles.textinputstyl}>
+                        <TextInput
+                            placeholder='Enter Phone Number'
+                            style={{ ...FONTS.h4, flex: 1, backgroundColor: COLORS.grey }}
+                        />
+                        <TouchableOpacity style={{ alignSelf: 'center' }}>
+                            <Image
+                                source={icons.contacts}
+                                style={{ height: SIZES.h3 * 2, width: SIZES.h3 * 2 }}
+                            />
+                        </TouchableOpacity>
+                    </View>
+
+                </View>
+
 
             </View>
         </View>

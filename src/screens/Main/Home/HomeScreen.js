@@ -219,7 +219,7 @@ const styles = StyleSheet.create({
   Balancectn: {
     height: SIZES.h1 * 6.5,
     width: SIZES.h1 * 12.5,
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.primary2,
     borderRadius: 25,
     marginTop: SIZES.h1 - 15,
     paddingHorizontal: 15
