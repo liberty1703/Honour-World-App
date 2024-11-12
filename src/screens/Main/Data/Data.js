@@ -6,24 +6,31 @@ import ArrowButton1 from '../../../components/Button/ArrowButton1'
 const Data = () => {
     const navigation = useNavigation();
     return (
-        <View styles={styles.page}>
+        <View style={styles.page}>
             <ArrowButton1 text={'Data'} onPress={() => navigation.goBack()} />
-            <View>
+            <View style={{ paddingHorizontal: SIZES.h3, backgroundColor: COLORS.grey }}>
                 <Text style={{ ...FONTS.h4, marginTop: SIZES.h1 }}>
                     Selected Network
                 </Text>
 
                 <View style={styles.textinputstyl}>
-                    <TextInput
-                        placeholder='Enter Phone Number'
-                        style={{ ...FONTS.h4, flex: 1, backgroundColor: COLORS.grey }}
-                    />
-                    <TouchableOpacity style={{ alignSelf: 'center' }}>
+                    <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                         <Image
-                            source={icons.contacts}
-                            style={{ height: SIZES.h3 * 2, width: SIZES.h3 * 2 }}
+                            source={icons.mtn}
+                            style={{ height: SIZES.h1 * 2.4, width: SIZES.h1 * 2.4 }}
                         />
+                        <Text style={{ ...FONTS.h4, }}>MTN SME</Text>
                     </TouchableOpacity>
+
+                    <View style={{ flexDirection: 'row', marginTop: SIZES.h3 }}>
+
+                        <TouchableOpacity style={{ alignItems: 'center' }}>
+                            <Image
+                                source={icons.droparrow}
+                                style={{ height: SIZES.h3, width: SIZES.h3 }}
+                            />
+                        </TouchableOpacity>
+                    </View>
                 </View>
 
             </View>
@@ -35,8 +42,8 @@ export default Data;
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: COLORS.primary,
-        // flex: 1,
+        backgroundColor: COLORS.grey,
+        flex: 1,
         // paddingHorizontal: SIZES.h1,
         paddingTop: SIZES.h1,
     },
