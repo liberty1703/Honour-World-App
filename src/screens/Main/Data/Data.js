@@ -35,9 +35,9 @@ export default Data;
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: COLORS.grey,
+        backgroundColor: COLORS.primary,
         // flex: 1,
-        paddingHorizontal: SIZES.h3,
+        // paddingHorizontal: SIZES.h1,
         paddingTop: SIZES.h1,
     },
     textinputstyl: {
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         borderColor: COLORS.black,
         marginTop: SIZES.h3,
         justifyContent: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
 
 });
