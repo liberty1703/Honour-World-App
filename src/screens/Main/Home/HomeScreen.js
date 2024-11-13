@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 import React, { useState } from 'react'
-import { COLORS, FONTS, icons, images, SIZES } from '../../../constants'
-import { useNavigation } from '@react-navigation/native'
-import TransferBalance from '../Transfer/TransferBalance'
+import { COLORS, FONTS, icons, images, SIZES } from '../../../constants';
+import { useNavigation } from '@react-navigation/native';
+import TransferBalance from '../Transfer/TransferBalance';
 
 const ActionsData = [
   { id: 1, subtitle: "Airtime", image: icons.phonecall },
@@ -104,11 +104,11 @@ const HomeScreen = () => {
               </View>
             </View>
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Text style={{ ...FONTS.h1, color: COLORS.background }}>
+              <Text style={{ ...FONTS.body2, color: COLORS.background }}>
                 N5,400.00
               </Text>
               <TouchableOpacity>
-                <Image source={icons.eye} style={{ height: SIZES.h1 * 0.9, width: SIZES.h1 * 1, tintColor: COLORS.background, marginLeft: SIZES.h5 * 0.8 }} />
+                <Image source={icons.eyeOpen} style={{ height: SIZES.h2 * 0.9, width: SIZES.h2 * 1, tintColor: COLORS.background, marginLeft: SIZES.h5 * 0.8 }} />
               </TouchableOpacity>
             </View>
           </View>

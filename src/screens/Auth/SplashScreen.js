@@ -1,9 +1,9 @@
-import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import { COLORS, FONTS } from '../../constants'
-import { useNavigation } from '@react-navigation/native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { ActivityIndicator } from 'react-native-paper'
+import { StatusBar, StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { COLORS, FONTS } from '../../constants';
+import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ActivityIndicator } from 'react-native-paper';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
@@ -12,7 +12,7 @@ const SplashScreen = () => {
   const checkStatus = async () => {
     try {
 
-      const completedIntro = await AsyncStorage.getItem('hasCompletedIntro')
+      const completedIntro = await AsyncStorage.getItem('hasCompletedIntro');
 
       if (!completedIntro) {
         console.log('First time logging in'); //first time opening the app
@@ -36,7 +36,7 @@ const SplashScreen = () => {
           //user has completed intro, going to main screen
           console.log('Openend before');
           console.log('Going to main screen');
-          navigation.replace('Main', { screen: "Bottom" })
+          navigation.replace('Main', { screen: "Bottom" });
         }
         else {
           // navigate to login
@@ -46,7 +46,7 @@ const SplashScreen = () => {
       }
     }
     catch (error) {
-      console.log('Error saving item', error)
+      console.log('Error saving item', error);
       navigation.replace('SignUp');
 
     }
@@ -73,7 +73,7 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.page}>
-      {isLoading && <ActivityIndicator size="large" color='white' />}
+      {isLoading && <ActivityIndicator size="small" color='white' />}
       <StatusBar
         backgroundColor={COLORS.primary2}
         barStyle={'light-content'}
