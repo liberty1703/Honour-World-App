@@ -25,7 +25,7 @@ const TransferBalance = () => {
                 <Text style={{ ...FONTS.body4, textAlign: 'center', textAlignVertical: 'center', marginTop: SIZES.h3 }}> Transfer Money from yor wallet</Text>
             </View>
 
-{/* WALLET BALANCE */}
+            {/* WALLET BALANCE */}
 
             <View style={styles.ctn}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: SIZES.h5 }}>
@@ -57,18 +57,20 @@ const TransferBalance = () => {
                 </View>
             </View>
 
-{/* INPUT DATA BUTTON */}
+            {/* INPUT DATA BUTTON */}
             <Inputdata
                 text={'Transfer Type'}
                 placeholder={'Select a Transfer Type'}
                 icon={icons.droparrow}
             />
+
             <Inputdata
                 text={'Amount'}
                 balance={'N2,500.00'}
                 placeholder={'Insert Amount'}
             />
-{/* CONTINUE BUTTON */}
+
+            {/* CONTINUE BUTTON */}
             <View style={{ marginTop: SIZES.h3 }}>
                 <ButtonInput
                     text={'Continue'}
@@ -78,7 +80,7 @@ const TransferBalance = () => {
     )
 }
 
-export default TransferBalance
+export default TransferBalance;
 
 const styles = StyleSheet.create({
     page: {
@@ -89,13 +91,12 @@ const styles = StyleSheet.create({
     },
     ctn: {
         height: SIZES.h1 * 3.3,
-        // backgroundColor: COLORS.grey,
         marginTop: SIZES.h3,
         paddingHorizontal: SIZES.h3,
         borderColor: COLORS.black,
         borderWidth: 0.3,
         marginHorizontal: SIZES.h3,
-        borderRadius: SIZES.h5 - 6
+        borderRadius: SIZES.h5 - 6,
     },
     line: {
         height: 0.5,

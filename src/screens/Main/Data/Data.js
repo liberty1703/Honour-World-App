@@ -13,26 +13,28 @@ const Data = () => {
                     Selected Network
                 </Text>
 
+                {/*Dropdown text*/}
                 <View style={styles.textinputstyl}>
-                    <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
-                        <Image
-                            source={icons.mtn}
-                            style={{ height: SIZES.h1 * 2.4, width: SIZES.h1 * 2.4 }}
-                        />
-                        <Text style={{ ...FONTS.h4, }}>MTN SME</Text>
-                    </TouchableOpacity>
-
-                    <View style={{ flexDirection: 'row', marginTop: SIZES.h3 }}>
-
-                        <TouchableOpacity style={{ alignItems: 'center' }}>
+                    <TouchableOpacity>
+                        <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                             <Image
-                                source={icons.droparrow}
-                                style={{ height: SIZES.h3, width: SIZES.h3 }}
+                                source={icons.mtn}
+                                style={{ height: SIZES.h1 * 2.4, width: SIZES.h1 * 2.4 }}
                             />
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                            <Text style={{ ...FONTS.h4, }}>MTN SME</Text>
+                        </View>
 
+                        <View style={{ flexDirection: 'row', marginTop: SIZES.h3 }}>
+
+                            <TouchableOpacity style={{ alignItems: 'center' }}>
+                                <Image
+                                    source={icons.droparrow}
+                                    style={{ height: SIZES.h3, width: SIZES.h3 }}
+                                />
+                            </TouchableOpacity>
+                        </View>
+                    </TouchableOpacity>
+                </View>
 
                 <View>
                     <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
@@ -55,7 +57,7 @@ const Data = () => {
 
 
             </View>
-        </View>
+        </View >
     )
 }
 
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     },
     textinputstyl: {
         height: SIZES.h1 * 2,
-        backgroundColor: COLORS.grey,
+        backgroundColor: COLORS.grey3,
         borderRadius: 5,
         borderColor: COLORS.black,
         marginTop: SIZES.h3,

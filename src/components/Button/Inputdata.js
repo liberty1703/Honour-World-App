@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { COLORS, FONTS, SIZES,} from '../../constants'; 
+import { COLORS, FONTS, SIZES, } from '../../constants';
 
 const Inputdata = ({ text, placeholder, balance, icon }) => {
   return (
@@ -15,7 +15,10 @@ const Inputdata = ({ text, placeholder, balance, icon }) => {
           style={{ ...FONTS.body5, flex: 1, paddingRight: 40 }} // Extra padding for the icon
         />
         <TouchableOpacity>
-        <Image source={icon} style={styles.iconStyle} /> 
+          {
+            icon &&
+            <Image source={icon} style={styles.iconStyle} />
+          }
         </TouchableOpacity>
       </View>
     </View>
