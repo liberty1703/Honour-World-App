@@ -73,9 +73,9 @@ const SplashScreen = () => {
 
   return (
     <View style={styles.page}>
-      {isLoading && <ActivityIndicator size="large" />}
+      {isLoading && <ActivityIndicator size="large" color='white' />}
       <StatusBar
-        backgroundColor={COLORS.primary}
+        backgroundColor={COLORS.primary2}
         barStyle={'light-content'}
       />
 
@@ -88,7 +88,7 @@ export default SplashScreen;
 
 const styles = StyleSheet.create({
   page: {
-    backgroundColor: COLORS.primary,
+    backgroundColor: COLORS.primary2,
     flex: 1,
     justifyContent: 'center',
   }

@@ -30,7 +30,7 @@ export default Inputdata;
 const styles = StyleSheet.create({
   page: {
     marginTop: SIZES.h3,
-    marginHorizontal: SIZES.h2
+    marginHorizontal: SIZES.h2,
   },
   textinputContainer: {
     height: SIZES.h1 * 2,
@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     position: 'relative', // Needed for icon absolute positioning
   },
   iconStyle: {
-    position: 'absolute', // Position the icon inside the input
-    right: 10, // Align to the right side
-    width: 20, // Adjust the width as per your icon size
-    height: 20, // Adjust the height as per your icon size
-    tintColor: COLORS.black, // Icon color
+    position: 'absolute',
+    right: 10,
+    width: 20,
+    height: 20,
+    tintColor: COLORS.black,
   },
 });
