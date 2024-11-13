@@ -92,17 +92,18 @@ const HomeScreen = () => {
 
               {/* ID and Copy Icon */}
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ ...FONTS.body2a - 1, color: COLORS.background, marginRight: 5 }}>
+                <Text style={{ ...FONTS.body4, color: COLORS.background, marginRight: 5 }}>
                   ID: 7679945
                 </Text>
                 <TouchableOpacity>
                   <Image
                     source={icons.copy}
-                    style={{ height: 18, width: 18, tintColor: COLORS.background }}
+                    style={{ height: SIZES.h4, width: SIZES.h4, tintColor: COLORS.background }}
                   />
                 </TouchableOpacity>
               </View>
             </View>
+            
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Text style={{ ...FONTS.body2, color: COLORS.background }}>
                 N5,400.00
@@ -112,20 +113,27 @@ const HomeScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{ flexDirection: 'row' }}>
+
+          <View style={{ flexDirection: 'row', alignItems:'center', justifyContent:'space-between' }}>
+
             <TouchableOpacity style={[styles.smallctn, { paddingHorizontal: 10 }, { alignItems: 'center' }]}>
-              <Image source={icons.cash} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
+              <Image source={icons.cash} style={{ height: SIZES.h1, width: SIZES.h1 }} />
               <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={() => navigation.navigate(TransferBalance)}>
-              <Image source={icons.transfer} style={{ height: SIZES.h1 * 1.5, width: SIZES.h1 * 1.5 }} />
-              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Transfer Balance</Text>
+              <Image source={icons.transfer} style={{ height: SIZES.h1, width: SIZES.h1}} />
+              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body4 }}> Transfer Balance</Text>
             </TouchableOpacity>
           </View>
         </View>
+
+      {/*QUICK ACTIONS*/}
+
         <Text style={{ ...FONTS.h3, marginTop: SIZES.h4 }}>
           Quick Actions
         </Text>
+
         <View>
           <FlatList
             data={ActionsData}
@@ -149,16 +157,22 @@ const HomeScreen = () => {
         <Image source={images.buydata}
           style={styles.imagectn1} />
 
+
+{/*TRANSACTIONS*/}
         <View style={{ flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
-          <Text style={{ ...FONTS.body3, }}>
+          <Text style={{ ...FONTS.body4, }}>
             Recent Transcation
           </Text>
           <TouchableOpacity>
-            <Text style={{ ...FONTS.body3, textDecorationLine: 'underline', color: COLORS.green }}>
+            <Text style={{ ...FONTS.body4, textDecorationLine: 'underline', color: COLORS.green }}>
               Sell all
             </Text>
           </TouchableOpacity>
         </View>
+
+        <View>
+
+       
         <FlatList
           data={transactionsData}
           keyExtractor={(item) => item.id}
@@ -189,6 +203,8 @@ const HomeScreen = () => {
             );
           }}
         />
+
+</View>
       </View>
     )
   }
@@ -198,8 +214,8 @@ const HomeScreen = () => {
       <FlatList renderItem={RenderHeader}
         data={['']} />
     </View>
-  )
-}
+  );
+};
 
 export default HomeScreen;
 
@@ -256,8 +272,8 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   imagectn1: {
-    height: SIZES.h1 * 7,
-    width: SIZES.h1 * 13,
+    height: SIZES.h1 * 5,
+    width: SIZES.h1*12,
     borderRadius: 25,
     marginTop: SIZES.h5 - 8,
 
