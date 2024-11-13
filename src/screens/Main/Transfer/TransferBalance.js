@@ -68,6 +68,7 @@ const TransferBalance = () => {
                 text={'Amount'}
                 balance={'N2,500.00'}
                 placeholder={'Insert Amount'}
+
             />
 
             {/* CONTINUE BUTTON */}
