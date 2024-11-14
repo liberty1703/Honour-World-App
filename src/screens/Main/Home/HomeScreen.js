@@ -189,8 +189,8 @@ const HomeScreen = () => {
                 <View style={{ flexDirection: 'column', flex: 1 }}>
                   {/* Title and Amount Row */}
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={{ ...FONTS.h3 }}>{item.title}</Text>
-                    <Text style={{ ...FONTS.h3 }}>{item.amount}</Text>
+                    <Text style={{ ...FONTS.h4 }}>{item.title}</Text>
+                    <Text style={{ ...FONTS.h4 }}>{item.amount}</Text>
                   </View>
 
                   {/* Date and Status Row */}
