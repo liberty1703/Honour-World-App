@@ -3,18 +3,21 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { SIZES, COLORS, FONTS, icons, images } from '../../../constants'
 import ArrowButton1 from '../../../components/Button/ArrowButton1'
+import FormInput from '../../../components/Input/FormInput'
+import NetworkSelector from '../../../components/Input/NetworkSelector'
 const Data = () => {
     const navigation = useNavigation();
     return (
         <View style={styles.page}>
             <ArrowButton1 text={'Data'} onPress={() => navigation.goBack()} />
+
             <View style={{ paddingHorizontal: SIZES.h3, backgroundColor: COLORS.grey2 }}>
                 <Text style={{ ...FONTS.h4, marginTop: SIZES.h1 }}>
                     Selected Network
                 </Text>
 
                 {/*Dropdown text*/}
-                <View style={styles.textinputstyl}>
+                {/* <View style={styles.textinputstyl}>
                     <TouchableOpacity>
                         <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
                             <Image
@@ -34,7 +37,9 @@ const Data = () => {
                             </TouchableOpacity>
                         </View>
                     </TouchableOpacity>
-                </View>
+                </View> */}
+
+                <NetworkSelector/>
 
                 <View>
                     <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
@@ -54,6 +59,8 @@ const Data = () => {
                     </View>
 
                 </View>
+
+                
 
 
             </View>
