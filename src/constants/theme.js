@@ -79,7 +79,7 @@ export const FONTS = {
         color: "#000000",
     },
     h1a: {
-        fontFamily: 'Poppins-Regular',
+        fontFamily: 'Poppins-Bold',
         fontSize: SIZES.h1 * 0.9,
         lineHeight: screenHeight * 0.05,
         color: "#000000",
