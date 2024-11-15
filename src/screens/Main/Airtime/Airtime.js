@@ -81,13 +81,13 @@ const Airtime = () => {
         <View style={{ marginTop: SIZES.h3, flexDirection: 'row' }}>
           <Image source={icons.caution}
             style={{ height: SIZES.h3 * 1.5, width: SIZES.h3 * 1.5 }} />
-          <Text style={{ ...FONTS.body4, marginHorizontal: SIZES.h5 }}>
-            HonourWorld cannot be heldd responsible for numbers entered incorrectly.{"\n"}
+          <Text style={{ ...FONTS.body4b, marginHorizontal: SIZES.h5 }}>
+            HonourWorld cannot be heldd responsible for numbers entered incorrectly.
             Please double check the phone number you've entered before Airtime Top-up.
           </Text>
         </View>
 
-        <View style={{ marginTop: SIZES.h4, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{ marginTop: SIZES.h2, flexDirection: 'row', justifyContent: 'space-between' }}>
           <Text style={{ ...FONTS.h4 }}>
             Enter Recharge Amount
           </Text>
