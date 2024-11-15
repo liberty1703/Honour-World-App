@@ -41,7 +41,7 @@ const Data = () => {
 
                 <NetworkSelector/>
 
-                <View>
+                {/* <View>
                     <Text style={{ ...FONTS.h4, marginTop: SIZES.h3 }}>
                         Phone Number
                     </Text>
@@ -58,7 +58,7 @@ const Data = () => {
                         </TouchableOpacity>
                     </View>
 
-                </View>
+                </View> */}
 
                 
 

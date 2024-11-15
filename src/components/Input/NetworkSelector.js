@@ -15,7 +15,7 @@ const NetworkSelector = () => {
                     source={icons.mtn}
                     style={styles.networkIcon}
                     />
-                    <Text style={styles.networkText}>MTN SME</Text>
+                    {/* <Text style={styles.networkText}>MTN SME</Text> */}
                 </View>
 
                 <View style={styles.dropdownRow}>

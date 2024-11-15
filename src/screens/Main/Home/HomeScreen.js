@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
 
   },
   imagectn2: {
-    height: SIZES.h4*3, width: SIZES.h4 * 3,
+    height: SIZES.h4 * 3, width: SIZES.h4 * 3,
     borderRadius: 50,
     borderColor: COLORS.grey2,
     borderWidth: 0.3,
