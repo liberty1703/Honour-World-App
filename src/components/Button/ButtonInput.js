@@ -7,7 +7,7 @@ const ButtonInput = ({text, onPress}) => {
     <View>
       <TouchableOpacity style={styles.btn}
        onPress={onPress}>
-        <Text style={[{...FONTS.h4}, {textAlign: 'center'}, {textAlignVertical: 'center', color: COLORS.background}]}>{text}</Text>
+        <Text style={[{...FONTS.h4}, {textAlign: 'center'}, {textAlignVertical: 'center', color: COLORS.white}]}>{text}</Text>
       </TouchableOpacity>
     </View>
   )
@@ -18,7 +18,7 @@ export default ButtonInput
 const styles = StyleSheet.create({
     btn: {
         height: SIZES.h1*1.5,
-        backgroundColor: COLORS.primary,
+        backgroundColor: COLORS.primary2,
         borderRadius: SIZES.h1,
         justifyContent: 'center',
         alignItems: 'center',
