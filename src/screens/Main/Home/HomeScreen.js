@@ -63,10 +63,10 @@ const HomeScreen = () => {
 
           {/* Text Container */}
           <View style={{ flexDirection: 'column', marginLeft: 10 }}>
-            <Text style={{ ...FONTS.h2 }}>
+            <Text style={{ ...FONTS.h4 }}>
               Hi, Spring
             </Text>
-            <Text style={{ ...FONTS.body4 }}>
+            <Text style={{ ...FONTS.body4b }}>
               What bill would you like to pay today?
             </Text>
           </View>
@@ -86,30 +86,30 @@ const HomeScreen = () => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
 
               {/* Wallet Balance */}
-              <Text style={{ ...FONTS.body2a - 2, color: COLORS.background }}>
+              <Text style={{ ...FONTS.body4b, color: COLORS.white }}>
                 Wallet Balance
               </Text>
 
               {/* ID and Copy Icon */}
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={{ ...FONTS.body4, color: COLORS.background, marginRight: 5 }}>
+              <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent:'space-between', gap:7 }}>
+                <Text style={{ ...FONTS.body4b, color: COLORS.white, }}>
                   ID: 7679945
                 </Text>
-                <TouchableOpacity>
+                <View>
                   <Image
                     source={icons.copy}
-                    style={{ height: SIZES.h4, width: SIZES.h4, tintColor: COLORS.background }}
+                    style={{ height: SIZES.h4*1.2, width: SIZES.h4, tintColor: COLORS.white }}
                   />
-                </TouchableOpacity>
-              </View>
+                </View>
+              </TouchableOpacity>
             </View>
             
             <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Text style={{ ...FONTS.body2, color: COLORS.background }}>
+              <Text style={{ ...FONTS.h1a, color: COLORS.white }}>
                 N5,400.00
               </Text>
               <TouchableOpacity>
-                <Image source={icons.eyeOpen} style={{ height: SIZES.h2 * 0.9, width: SIZES.h2 * 1, tintColor: COLORS.background, marginLeft: SIZES.h5 * 0.8 }} />
+                <Image source={icons.eyeOpen} style={{ height: SIZES.h2 * 0.9, width: SIZES.h2 * 1, tintColor: COLORS.white, marginLeft: SIZES.h5 * 0.8 }} />
               </TouchableOpacity>
             </View>
           </View>
@@ -130,7 +130,7 @@ const HomeScreen = () => {
 
       {/*QUICK ACTIONS*/}
 
-        <Text style={{ ...FONTS.h3, marginTop: SIZES.h4 }}>
+        <Text style={{ ...FONTS.body3a, marginTop: SIZES.h4 }}>
           Quick Actions
         </Text>
 
@@ -159,7 +159,7 @@ const HomeScreen = () => {
 
 
 {/*TRANSACTIONS*/}
-        <View style={{ flexDirection: 'row', marginTop: SIZES.h3, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
+        <View style={{ flexDirection: 'row', marginTop: SIZES.h2, textAlign: 'center', textAlignVertical: 'center', justifyContent: 'space-between' }}>
           <Text style={{ ...FONTS.body4, }}>
             Recent Transcation
           </Text>
@@ -170,16 +170,16 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View>
 
-       
+        <View style={{marginTop:SIZES.h4}}>
+
         <FlatList
           data={transactionsData}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => {
             return (
-              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
                 {/* Image */}
                 <View>
                   <Image style={styles.imagectn2} source={icons.mtn} />
@@ -188,15 +188,15 @@ const HomeScreen = () => {
                 {/* Text Container */}
                 <View style={{ flexDirection: 'column', flex: 1 }}>
                   {/* Title and Amount Row */}
-                  <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={{ ...FONTS.h4 }}>{item.title}</Text>
-                    <Text style={{ ...FONTS.h4 }}>{item.amount}</Text>
+                  <View style={{ flexDirection: 'row', alignItems:'center', justifyContent: 'space-between' }}>
+                    <Text style={{ ...FONTS.h5 }}>{item.title}</Text>
+                    <Text style={{ ...FONTS.body4b }}>{item.amount}</Text>
                   </View>
 
                   {/* Date and Status Row */}
                   <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5 }}>
-                    <Text style={{ ...FONTS.body4 }}>{item.date}</Text>
-                    <Text style={{ ...FONTS.body4, color: COLORS.green }}>{item.status}</Text>
+                    <Text style={{ ...FONTS.body4b }}>{item.date}</Text>
+                    <Text style={{ ...FONTS.body4b, color: COLORS.green }}>{item.status}</Text>
                   </View>
                 </View>
               </View>
@@ -227,14 +227,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: SIZES.h5
   },
   imagectn: {
-    height: SIZES.h1 * 2, width: SIZES.h1 * 2,
+    height: SIZES.h2 * 2, width: SIZES.h2 * 2,
     borderRadius: 50,
-    borderColor: COLORS.grey,
-    borderWidth: 0.3
+    // borderColor: COLORS.grey2,
+    // borderWidth: 2
   },
   Balancectn: {
     height: SIZES.h1 * 6.5,
-    width: SIZES.h1 * 12.5,
+    width: SIZES.h1 * 12.1,
     backgroundColor: COLORS.primary2,
     borderRadius: 25,
     marginTop: SIZES.h1 - 15,
@@ -279,10 +279,10 @@ const styles = StyleSheet.create({
 
   },
   imagectn2: {
-    height: SIZES.h1 * 2, width: SIZES.h1 * 3,
+    height: SIZES.h3 * 2, width: SIZES.h3 * 3,
     borderRadius: 50,
-    borderColor: COLORS.grey,
-    borderWidth: 0.3
+    borderColor: COLORS.grey2,
+    borderWidth: 0.3,
   },
 
 })

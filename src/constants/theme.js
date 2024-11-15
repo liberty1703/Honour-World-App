@@ -163,18 +163,18 @@ export const FONTS = {
         color: "#000000",
     },
     body3b: {
-        fontFamily: 'Poppins-Regularlar',
+        fontFamily: 'Poppins-Regularl',
         fontSize: SIZES.body3b,
         lineHeight: 22,
         color: "#000000",
     }, body3c: {
-        fontFamily: 'Poppins-Regularlar',
+        fontFamily: 'Poppins-Regular',
         fontSize: SIZES.body3a * 0.88,
         lineHeight: 22,
         color: "#000000",
     },
     body4: {
-        fontFamily: 'Poppins-Bold',
+        fontFamily: 'Poppins-Regular',
         fontSize: SIZES.body4,
         lineHeight: 16,
         color: "#000000",
