@@ -163,14 +163,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
-    backgroundColor: COLORS.background,
+    // backgroundColor: COLORS.grey2,
     borderRadius: 10,
 
   },
 
   iconStyle: {
-    height: SIZES.h1 * 3,
-    width: SIZES.h1 * 3,
+    height: SIZES.h1 * 1.8,
+    width: SIZES.h1 * 1.8,
     marginBottom: 5,
   },
   textinputstyl: {

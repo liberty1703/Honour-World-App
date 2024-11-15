@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import React from 'react';
-import { icons, FONTS, SIZES,   COLORS, image } from '../../constants';
+import { icons, FONTS, SIZES, COLORS, image } from '../../constants';
 
 const NetworkSelector = () => {
   return (
@@ -10,13 +10,13 @@ const NetworkSelector = () => {
         <View style={styles.textinputstyl}>
             
             <TouchableOpacity>
-                {/* <View style={styles.networkRow}>
+                <View style={styles.networkRow}>
                     <Image
                     source={icons.mtn}
                     style={styles.networkIcon}
                     />
                     <Text style={styles.networkText}>MTN SME</Text>
-                </View> */}
+                </View>
 
                 <View style={styles.dropdownRow}>
                     <TouchableOpacity style={styles.dropdownButton}>

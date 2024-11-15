@@ -9,7 +9,7 @@ const FormInput = ({ placeholder, image, icon, onPress, secureTextEntry, onChang
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
-    console.log('isPasswordVisible', isPasswordVisible)
+    console.log('isPasswordVisible', isPasswordVisible);
   };
 
   return (
