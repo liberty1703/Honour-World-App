@@ -158,19 +158,19 @@ const styles = StyleSheet.create({
   },
 
   ctn: {
-    height: SIZES.h1 * 2.8,
+    height: SIZES.h1 * 2.5,
     width: SIZES.h1 * 2.5,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
-    // backgroundColor: COLORS.grey2,
+    backgroundColor: COLORS.grey2,
     borderRadius: 10,
 
   },
 
   iconStyle: {
-    height: SIZES.h1 * 1.8,
-    width: SIZES.h1 * 1.8,
+    height: SIZES.h1 * 1.7,
+    width: SIZES.h1 * 1.7,
     marginBottom: 5,
   },
   textinputstyl: {
