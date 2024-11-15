@@ -118,12 +118,12 @@ const HomeScreen = () => {
 
             <TouchableOpacity style={[styles.smallctn, { paddingHorizontal: 10 }, { alignItems: 'center' }]}>
               <Image source={icons.cash} style={{ height: SIZES.h1, width: SIZES.h1 }} />
-              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body3, marginLeft: 5 }}> Fund Wallet</Text>
+              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body4b, marginLeft: 5 }}> Fund Wallet</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={[styles.lgctn, { paddingHorizontal: 10 }, { alignItems: 'center' }, { marginLeft: 5 }]} onPress={() => navigation.navigate(TransferBalance)}>
               <Image source={icons.transfer} style={{ height: SIZES.h1, width: SIZES.h1}} />
-              <Text style={{ textAlign: 'center', textAlignVertical: 'center', ...FONTS.body4 }}> Transfer Balance</Text>
+              <Text style={{ textAlign: 'center', ...FONTS.body4b }}> Transfer Balance</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
 
   },
   imagectn2: {
-    height: SIZES.h3 * 2, width: SIZES.h3 * 3,
+    height: SIZES.h4*3, width: SIZES.h4 * 3,
     borderRadius: 50,
     borderColor: COLORS.grey2,
     borderWidth: 0.3,
