@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
         marginTop: SIZES.h3,
       },
       textinputstyl: {
-        height: SIZES.h1 * 2,
+        height: SIZES.h2 * 2,
         backgroundColor: COLORS.grey3,
         borderRadius: 5,
         borderColor: COLORS.black,
-        marginTop: SIZES.h3,
+        // marginTop: SIZES.h5,
         justifyContent: 'center',
         flexDirection: 'row',
       },
